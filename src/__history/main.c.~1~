@@ -33,10 +33,6 @@ bool button3pressed = false;
 char p1State = Row2 | Row3 | Row4 | Row5 ;
 char p2State = Row2 | Row3 | Row4 | Row5 ; 
 
-int ballX = 4, ballY = 4; // Topun baþlangýç konumu
-int ballDirX = 1, ballDirY = 1; // Topun yönü
-
-
 bool readButton0State() {
     // Dü?me pinini oku
     return (PORTB & (1 << Player1_up_pin)) == 0; // Dü?me bas?ld???nda LOW olacak ?ekilde ba?l? varsay?yoruz
@@ -82,8 +78,6 @@ int main(int argc, char** argv)
       } else if (!button2pressed && button3pressed) {
           updatePlayerPosition(2, 0); // 2 a?a??
       }
-      updateBallPosition();
-       __delay_ms(200); // Topun hýzýný ayarlamak için gecikme
     }
     
   
@@ -124,20 +118,8 @@ void updatePlayerPosition(int player, int direction) {
 }
 
 
-void updateBallPosition() {
-    ballX += ballDirX;
-    ballY += ballDirY;
 
-    // Duvarlarla çarpýþma
-    if (ballX <= 0 || ballX >= 7) ballDirX = -ballDirX;
-    if (ballY <= 0 || ballY >= 7) ballDirY = -ballDirY;
 
-    // Paddle'larla çarpýþma (örneðin paddle pozisyonlarýyla topun konumunu kontrol edin)
-    // Paddle'lara çarpma kontrolünü buraya ekleyin
 
-    // Topu ekranda güncelle
-    MAX7219_clear();
-    MAX7219_write(ballY + 1, 1 << ballX);
-}
 
 
