@@ -2090,79 +2090,77 @@ void MAX7219_NoOperation();
 
 void MAX7219_draw_ball(char* ball);
 
-void initPlayersPad();
+void initGame();
 void updatePlayerPosition(int player, int direction);
+void updateBallPosition();
 # 5 "main.c" 2
-# 28 "main.c"
+# 29 "main.c"
 _Bool button0pressed = 0;
 _Bool button1pressed = 0;
 _Bool button2pressed = 0;
 _Bool button3pressed = 0;
 
-char p1State = 0b00000010 | 0b00000100 | 0b00001000 | 0b00010000 ;
-char p2State = 0b00000010 | 0b00000100 | 0b00001000 | 0b00010000 ;
+char p1State = 0b00000010 | 0b00000100 | 0b00001000 | 0b00010000;
+char p2State = 0b00000010 | 0b00000100 | 0b00001000 | 0b00010000;
+
+int ballDirX = 1;
+int ballDirY = 1;
+int ballX = 4;
+char ballYState = 0b00001000;
 
 _Bool readButton0State() {
-
-    return (PORTB & (1 << RB0)) == 0;
-}
-_Bool readButton1State() {
-
-    return (PORTB & (1 << RB1)) == 0;
-}
-_Bool readButton2State() {
-
-    return (PORTB & (1 << RB2)) == 0;
-}
-_Bool readButton3State() {
-
-    return (PORTB & (1 << RB3)) == 0;
-}
-
-
-int main(int argc, char** argv)
-{
-  MAX7219_init(1);
-  initPlayersPad();
-
-  while(1)
-    {
-
-
-      button0pressed = readButton0State();
-      button1pressed = readButton1State();
-      button2pressed = readButton2State();
-      button3pressed = readButton3State();
-
-
-      if (button0pressed && !button1pressed) {
-          updatePlayerPosition(1, 1);
-      } else if (!button0pressed && button1pressed) {
-          updatePlayerPosition(1, 0);
-      }
-
-
-      if (button2pressed && !button3pressed) {
-          updatePlayerPosition(2, 1);
-      } else if (!button2pressed && button3pressed) {
-          updatePlayerPosition(2, 0);
-      }
+    if (RB0 == 0) {
+        return 1;
     }
-
-
-  return (0);
+    return 0;
 }
 
-void initPlayersPad(){
-    MAX7219_write(8 , p1State );
-    MAX7219_write(1 , p2State );
+_Bool readButton1State() {
+    if (RB1 == 0) {
+        return 1;
+    }
+    return 0;
 }
 
-char buttonGoUp(char currentState){
+_Bool readButton2State() {
+    if (RB2 == 0) {
+        return 1;
+    }
+    return 0;
+}
+
+_Bool readButton3State() {
+    if (RB3 == 0) {
+        return 1;
+    }
+    return 0;
+}
+
+void initPorts() {
+    TRISB = 0x0F;
+    TRISC = 0x00;
+    MAX7219_init(1);
+}
+
+void initGame() {
+    ballX = 4;
+    ballYState = 0b00001000;
+    MAX7219_write(8, p1State);
+    MAX7219_write(1, p2State);
+    MAX7219_write(ballX, ballYState);
+}
+
+char buttonGoUp(char currentState) {
+    if (currentState & (0b00001000 | 0b00010000 | 0b00100000 | 0b01000000)) {
+        return currentState;
+    }
     return currentState << 1;
 }
 
-char buttonGoDown(char currentState){
+char buttonGoDown(char currentState) {
+    if (currentState & (0b10000000 | 0b00000001 | 0b00000010 | 0b00000100)) {
+        return currentState;
+    }
     return currentState >> 1;
 }
 
@@ -2184,4 +2182,50 @@ void updatePlayerPosition(int player, int direction) {
             MAX7219_write(1, p2State);
         }
     }
+}
+
+void updateBallPosition() {
+
+    if (ballX < 1 || ballX > 8) {
+        ballDirX = -ballDirX;
+    }
+    ballX += ballDirX;
+
+    if ((ballYState & 0b10000000) || (ballYState & 0b01000000)) {
+        ballDirY = -ballDirY;
+    }
+    ballYState = (ballDirY == 1) ? ballYState << 1 : ballYState >> 1;
+
+    MAX7219_write(ballX, ballYState);
+}
+
+int main(int argc, char** argv) {
+    initPorts();
+    initGame();
+
+    while (1) {
+
+        _delay((unsigned long)((10)*(800000000/4000.0)));
+        button0pressed = readButton0State();
+        button1pressed = readButton1State();
+        button2pressed = readButton2State();
+        button3pressed = readButton3State();
+
+
+        if (button0pressed) {
+            updatePlayerPosition(1, 1);
+        } else if (button1pressed) {
+            updatePlayerPosition(1, 0);
+        }
+
+
+        if (button2pressed) {
+            updatePlayerPosition(2, 1);
+        } else if (button3pressed) {
+            updatePlayerPosition(2, 0);
+        }
+        updateBallPosition();
+    }
+
+    return (0);
 }

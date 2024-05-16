@@ -14,6 +14,8 @@ void MAX7219_NoOperation();
 //------------------------------------------------------------------------------
 void MAX7219_draw_ball(char* ball);
 
-void initPlayersPad();
+void initGame();
 void updatePlayerPosition(int player, int direction);
+void updateBallPosition();
+
 #endif	

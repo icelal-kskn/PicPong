@@ -7,6 +7,8 @@
 #define PLAYER_BLOCK_LEN 8
 #define _XTAL_FREQ 800000000
 
+#define DEBOUNCE_DELAY 10
+
 #define Player1_up_pin RB0
 #define Player1_down_pin RB1
 #define Player2_up_pin RB2
@@ -22,122 +24,139 @@
 #define Row7 0b01000000
 #define Row0 0b10000000
 
-
-//columlar sa?dan sola 0 1 2 3 4 5 6 7  diye gidiyor
-//rowlar yukar?dan a?a??ya Row8 1 2 3 4 5 6 7 diye gidiyor
+//columlar sagdan sola 0 1 2 3 4 5 6 7  diye gidiyor
+//rowlar yukaridan asag?ya Row 1 2 3 4 5 6 7 0 diye gidiyor
 bool button0pressed = false;
 bool button1pressed = false;
 bool button2pressed = false;
 bool button3pressed = false;
 
-char p1State = Row2 | Row3 | Row4 | Row5 ;
-char p2State = Row2 | Row3 | Row4 | Row5 ; 
+char p1State = Row2 | Row3 | Row4 | Row5;
+char p2State = Row2 | Row3 | Row4 | Row5;
 
-int ballX = 4, ballY = 4; // Topun baþlangýç konumu
-int ballDirX = 1, ballDirY = 1; // Topun yönü
-
+int ballDirX = 1;
+int ballDirY = 1;
+int ballX = 4;
+char ballYState = Row4;
 
 bool readButton0State() {
-    // Dü?me pinini oku
-    return (PORTB & (1 << Player1_up_pin)) == 0; // Dü?me bas?ld???nda LOW olacak ?ekilde ba?l? varsay?yoruz
-}
-bool readButton1State() {
-    // Dü?me pinini oku
-    return (PORTB & (1 << Player1_down_pin)) == 0; // Dü?me bas?ld???nda LOW olacak ?ekilde ba?l? varsay?yoruz
-}
-bool readButton2State() {
-    // Dü?me pinini oku
-    return (PORTB & (1 << Player2_up_pin)) == 0; // Dü?me bas?ld???nda LOW olacak ?ekilde ba?l? varsay?yoruz
-}
-bool readButton3State() {
-    // Dü?me pinini oku
-    return (PORTB & (1 << Player2_down_pin)) == 0; // Dü?me bas?ld???nda LOW olacak ?ekilde ba?l? varsay?yoruz
-}
-
-
-int main(int argc, char** argv) 
-{
-  MAX7219_init(1);  //Pass number of Chips as argument
-  initPlayersPad();
-
-  while(1)
-    {
-      //if !Finish Game Finished method
-      
-      button0pressed = readButton0State();
-      button1pressed = readButton1State();
-      button2pressed = readButton2State();
-      button3pressed = readButton3State();
-
-      // Oyuncu 1
-      if (button0pressed && !button1pressed) {
-          updatePlayerPosition(1, 1); // 1 yukar?
-      } else if (!button0pressed && button1pressed) {
-          updatePlayerPosition(1, 0); // 1 a?a??
-      }
-
-      // Oyuncu 2
-      if (button2pressed && !button3pressed) {
-          updatePlayerPosition(2, 1); // 2 yukar?
-      } else if (!button2pressed && button3pressed) {
-          updatePlayerPosition(2, 0); // 2 a?a??
-      }
-      updateBallPosition();
-       __delay_ms(200); // Topun hýzýný ayarlamak için gecikme
+    if (RB0 == 0) { // Buton bas?ld?ysa
+        return true;
     }
-    
-  
-  return (EXIT_SUCCESS);
+    return false;
 }
 
-void initPlayersPad(){
-    MAX7219_write(8 , p1State );
-    MAX7219_write(1 , p2State );
+bool readButton1State() {
+    if (RB1 == 0) { // Buton bas?ld?ysa
+        return true;
+    }
+    return false;
 }
 
-char buttonGoUp(char currentState){
+bool readButton2State() {
+    if (RB2 == 0) { // Buton bas?ld?ysa
+        return true;
+    }
+    return false;
+}
+
+bool readButton3State() {
+    if (RB3 == 0) { // Buton bas?ld?ysa
+        return true;
+    }
+    return false;
+}
+
+void initPorts() {
+    TRISB = 0x0F; // init input
+    TRISC = 0x00; //init output
+    MAX7219_init(1);
+}
+
+void initGame() {
+    ballX = 4;
+    ballYState = Row4;
+    MAX7219_write(8, p1State);
+    MAX7219_write(1, p2State);
+    MAX7219_write(ballX, ballYState);
+}
+
+char buttonGoUp(char currentState) {
+    if (currentState & (Row4 | Row5 | Row6 | Row7)) {
+        return currentState;
+    }
     return currentState << 1;
 }
 
-char buttonGoDown(char currentState){
+char buttonGoDown(char currentState) {
+    if (currentState & (Row0 | Row1 | Row2 | Row3)) {
+        return currentState;
+    }
     return currentState >> 1;
 }
 
 void updatePlayerPosition(int player, int direction) {
     if (player == 1) {
-        if (direction == 1) { // Yukar?
+        if (direction == 1) { // Yukari
             p1State = buttonGoUp(p1State);
             MAX7219_write(8, p1State);
-        } else { // A?a??
+        } else { // Asag?
             p1State = buttonGoDown(p1State);
             MAX7219_write(8, p1State);
         }
     } else {
-        if (direction == 1) { // Yukar?
+        if (direction == 1) { // Yukari
             p2State = buttonGoUp(p2State);
             MAX7219_write(1, p2State);
-        } else { // A?a??
+        } else { // Asagi
             p2State = buttonGoDown(p2State);
             MAX7219_write(1, p2State);
         }
     }
 }
 
-
 void updateBallPosition() {
+    //Topun column kordinatlar?
+    if (ballX < 1 || ballX > 8) { // S?n?rlar
+        ballDirX = -ballDirX;
+    }
     ballX += ballDirX;
-    ballY += ballDirY;
 
-    // Duvarlarla çarpýþma
-    if (ballX <= 0 || ballX >= 7) ballDirX = -ballDirX;
-    if (ballY <= 0 || ballY >= 7) ballDirY = -ballDirY;
+    if ((ballYState & Row0) || (ballYState & Row7)) { //s?n?rlar
+        ballDirY = -ballDirY;
+    }
+    ballYState = (ballDirY == 1) ? ballYState << 1 : ballYState >> 1;
 
-    // Paddle'larla çarpýþma (örneðin paddle pozisyonlarýyla topun konumunu kontrol edin)
-    // Paddle'lara çarpma kontrolünü buraya ekleyin
-
-    // Topu ekranda güncelle
-    MAX7219_clear();
-    MAX7219_write(ballY + 1, 1 << ballX);
+    MAX7219_write(ballX, ballYState);
 }
 
+int main(int argc, char** argv) {
+    initPorts();
+    initGame();
 
+    while (1) {
+        //if !Finish Game Finished method
+        __delay_ms(10); // Topun h?z?n? ayarlamak için gecikme
+        button0pressed = readButton0State();
+        button1pressed = readButton1State();
+        button2pressed = readButton2State();
+        button3pressed = readButton3State();
+
+        // Oyuncu 1
+        if (button0pressed) {
+            updatePlayerPosition(1, 1); // 1 yukari
+        } else if (button1pressed) {
+            updatePlayerPosition(1, 0); // 1 asagi
+        }
+
+        // Oyuncu 2
+        if (button2pressed) {
+            updatePlayerPosition(2, 1); // 2 yukari
+        } else if (button3pressed) {
+            updatePlayerPosition(2, 0); // 2 asagi
+        }
+        updateBallPosition();
+    }
+
+    return (EXIT_SUCCESS);
+}

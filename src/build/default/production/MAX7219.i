@@ -1946,8 +1946,9 @@ void MAX7219_NoOperation();
 
 void MAX7219_draw_ball(char* ball);
 
-void initPlayersPad();
+void initGame();
 void updatePlayerPosition(int player, int direction);
+void updateBallPosition();
 # 10 "MAX7219.c" 2
 
 void MAX7219_init(char noChips)
