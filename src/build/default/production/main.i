@@ -2094,7 +2094,7 @@ void initGame();
 void updatePlayerPosition(int player, int direction);
 void updateBallPosition();
 # 5 "main.c" 2
-# 29 "main.c"
+# 28 "main.c"
 _Bool button0pressed = 0;
 _Bool button1pressed = 0;
 _Bool button2pressed = 0;
@@ -2103,34 +2103,38 @@ _Bool button3pressed = 0;
 char p1State = 0b00000010 | 0b00000100 | 0b00001000 | 0b00010000;
 char p2State = 0b00000010 | 0b00000100 | 0b00001000 | 0b00010000;
 
-int ballDirX = 1;
+int ballDirX = -1;
 int ballDirY = 1;
 int ballX = 4;
 char ballYState = 0b00001000;
 
 _Bool readButton0State() {
-    if (RB0 == 0) {
+    if (PORTBbits.RB0 == 1) {
+        PORTBbits.RB0 = 0;
         return 1;
     }
     return 0;
 }
 
 _Bool readButton1State() {
-    if (RB1 == 0) {
+    if (PORTBbits.RB1 == 1) {
+        PORTBbits.RB1 = 0 ;
         return 1;
     }
     return 0;
 }
 
 _Bool readButton2State() {
-    if (RB2 == 0) {
+    if (PORTBbits.RB2 == 1) {
+        PORTBbits.RB2 = 0;
         return 1;
     }
     return 0;
 }
 
 _Bool readButton3State() {
-    if (RB3 == 0) {
+    if (PORTBbits.RB3 == 1) {
+        PORTBbits.RB3 = 0 ;
         return 1;
     }
     return 0;
@@ -2140,6 +2144,7 @@ void initPorts() {
     TRISB = 0x0F;
     TRISC = 0x00;
     MAX7219_init(1);
+    PORTB = 0x00;
 }
 
 void initGame() {
@@ -2185,6 +2190,7 @@ void updatePlayerPosition(int player, int direction) {
 }
 
 void updateBallPosition() {
+    int ballXprev= ballX;
 
     if (ballX < 1 || ballX > 8) {
         ballDirX = -ballDirX;
@@ -2196,6 +2202,7 @@ void updateBallPosition() {
     }
     ballYState = (ballDirY == 1) ? ballYState << 1 : ballYState >> 1;
 
+    MAX7219_write(ballXprev, 0b00000000);
     MAX7219_write(ballX, ballYState);
 }
 

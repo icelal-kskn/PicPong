@@ -7,7 +7,6 @@
 #define PLAYER_BLOCK_LEN 8
 #define _XTAL_FREQ 800000000
 
-#define DEBOUNCE_DELAY 10
 
 #define Player1_up_pin RB0
 #define Player1_down_pin RB1
@@ -34,34 +33,38 @@ bool button3pressed = false;
 char p1State = Row2 | Row3 | Row4 | Row5;
 char p2State = Row2 | Row3 | Row4 | Row5;
 
-int ballDirX = 1;
+int ballDirX = -1;
 int ballDirY = 1;
 int ballX = 4;
 char ballYState = Row4;
 
 bool readButton0State() {
-    if (RB0 == 0) { // Buton bas?ld?ysa
+    if (PORTBbits.RB0 == 1) { // Buton bas?ld?ysa
+        PORTBbits.RB0 = 0;
         return true;
     }
     return false;
 }
 
 bool readButton1State() {
-    if (RB1 == 0) { // Buton bas?ld?ysa
+    if (PORTBbits.RB1 == 1) { // Buton bas?ld?ysa
+        PORTBbits.RB1 = 0 ;
         return true;
     }
     return false;
 }
 
 bool readButton2State() {
-    if (RB2 == 0) { // Buton bas?ld?ysa
+    if (PORTBbits.RB2 == 1) { // Buton bas?ld?ysa
+        PORTBbits.RB2 = 0;
         return true;
     }
     return false;
 }
 
 bool readButton3State() {
-    if (RB3 == 0) { // Buton bas?ld?ysa
+    if (PORTBbits.RB3 == 1) { // Buton bas?ld?ysa
+        PORTBbits.RB3 = 0 ;
         return true;
     }
     return false;
@@ -71,6 +74,7 @@ void initPorts() {
     TRISB = 0x0F; // init input
     TRISC = 0x00; //init output
     MAX7219_init(1);
+    PORTB = 0x00;
 }
 
 void initGame() {
@@ -116,6 +120,7 @@ void updatePlayerPosition(int player, int direction) {
 }
 
 void updateBallPosition() {
+    int ballXprev= ballX;
     //Topun column kordinatlar?
     if (ballX < 1 || ballX > 8) { // S?n?rlar
         ballDirX = -ballDirX;
@@ -126,7 +131,8 @@ void updateBallPosition() {
         ballDirY = -ballDirY;
     }
     ballYState = (ballDirY == 1) ? ballYState << 1 : ballYState >> 1;
-
+    
+    MAX7219_write(ballXprev, No_Light);
     MAX7219_write(ballX, ballYState);
 }
 
@@ -137,6 +143,9 @@ int main(int argc, char** argv) {
     while (1) {
         //if !Finish Game Finished method
         __delay_ms(10); // Topun h?z?n? ayarlamak için gecikme
+        updateBallPosition();
+
+        
         button0pressed = readButton0State();
         button1pressed = readButton1State();
         button2pressed = readButton2State();
@@ -155,7 +164,7 @@ int main(int argc, char** argv) {
         } else if (button3pressed) {
             updatePlayerPosition(2, 0); // 2 asagi
         }
-        updateBallPosition();
+
     }
 
     return (EXIT_SUCCESS);

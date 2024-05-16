@@ -12,32 +12,30 @@
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
 $dist/default/production\src.production.o
-cinit CODE 0 7DE 7DE 22 2 1
-text1 CODE 0 69B 69B 5A 2 1
-text2 CODE 0 5C8 5C8 D 2 1
-text3 CODE 0 5D5 5D5 E 2 1
-text4 CODE 0 6F5 6F5 5E 2 1
-text5 CODE 0 5B2 5B2 A 2 1
-text6 CODE 0 5A8 5A8 A 2 1
-text7 CODE 0 59E 59E A 2 1
-text8 CODE 0 594 594 A 2 1
-text9 CODE 0 5BC 5BC C 2 1
-text10 CODE 0 60A 60A 15 2 1
-text11 CODE 0 58C 58C 8 2 1
-text12 CODE 0 644 644 27 2 1
-text13 CODE 0 61F 61F 25 2 1
-text14 CODE 0 5F6 5F6 14 2 1
-text15 CODE 0 66B 66B 30 2 1
-idataCOMMON CODE 0 583 583 2 2 1
-maintext CODE 0 753 753 8B 2 1
-cstackCOMMON COMMON 1 70 70 C 1 1
-cstackBANK0 BANK0 1 27 27 7 1 1
-inittext CODE 0 5E3 5E3 13 2 1
-bssBANK0 BANK0 1 2E 2E 4 1 1
-idataBANK0 CODE 0 585 585 7 2 1
-dataBANK0 BANK0 1 20 20 7 1 1
-dataCOMMON COMMON 1 7C 7C 2 1 1
-$C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_12.o
+cinit CODE 0 7EA 7EA 16 2 1
+text1 CODE 0 692 692 62 2 1
+text2 CODE 0 5B0 5B0 D 2 1
+text3 CODE 0 5BD 5BD E 2 1
+text4 CODE 0 6F4 6F4 6B 2 1
+text5 CODE 0 5A5 5A5 B 2 1
+text6 CODE 0 59A 59A B 2 1
+text7 CODE 0 58F 58F B 2 1
+text8 CODE 0 584 584 B 2 1
+text9 CODE 0 5CB 5CB F 2 1
+text10 CODE 0 601 601 15 2 1
+text11 CODE 0 573 573 8 2 1
+text12 CODE 0 63B 63B 27 2 1
+text13 CODE 0 616 616 25 2 1
+text14 CODE 0 5ED 5ED 14 2 1
+text15 CODE 0 662 662 30 2 1
+maintext CODE 0 75F 75F 8B 2 1
+cstackCOMMON COMMON 1 70 70 E 1 1
+cstackBANK0 BANK0 1 29 29 7 1 1
+inittext CODE 0 5DA 5DA 13 2 1
+bssBANK0 BANK0 1 30 30 4 1 1
+idataBANK0 CODE 0 57B 57B 9 2 1
+dataBANK0 BANK0 1 20 20 9 1 1
+$C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_12.o
 end_init CODE 0 0 0 3 2 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -45,20 +43,20 @@ end_init CODE 0 0 0 3 2 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 32-6F 1
+RAM 34-6F 1
 RAM A0-EF 1
 RAM 110-16F 1
 RAM 190-1EF 1
-BANK0 32-6F 1
+BANK0 34-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
-CONST 3-582 2
+CONST 3-572 2
 CONST 800-1FFF 2
-ENTRY 3-582 2
+ENTRY 3-572 2
 ENTRY 800-1FFF 2
 IDLOC 2000-2003 2
-CODE 3-582 2
+CODE 3-572 2
 CODE 800-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -66,9 +64,9 @@ SFR2 100-10F 1
 SFR3 180-18F 1
 CONFIG 2007-2007 2
 EEDATA 2100-21FF 2
-STRCODE 3-582 2
+STRCODE 3-572 2
 STRCODE 800-1FFF 2
-STRING 3-582 2
+STRING 3-572 2
 STRING 800-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -84,177 +82,180 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\src.production.o
-7DE cinit CODE >915:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7DE cinit CODE >918:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7DE cinit CODE >1006:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7DF cinit CODE >1007:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7E0 cinit CODE >1008:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7E1 cinit CODE >1009:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7E2 cinit CODE >1010:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7E3 cinit CODE >1011:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7E4 cinit CODE >1012:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7E5 cinit CODE >1013:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7E6 cinit CODE >1014:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7E7 cinit CODE >1015:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7EC cinit CODE >1019:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7F1 cinit CODE >1020:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7F2 cinit CODE >1021:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7F7 cinit CODE >1022:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7F8 cinit CODE >1026:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7F9 cinit CODE >1027:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7FA cinit CODE >1028:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7FB cinit CODE >1029:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7FC cinit CODE >1035:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7FC cinit CODE >1037:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-7FD cinit CODE >1038:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-66B text15 CODE >21:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
-66C text15 CODE >23:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
-66E text15 CODE >25:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
-671 text15 CODE >26:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
-677 text15 CODE >26:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
-686 text15 CODE >27:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
-687 text15 CODE >28:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
+7EA cinit CODE >908:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+7EA cinit CODE >911:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+7EA cinit CODE >997:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+7EB cinit CODE >998:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+7EC cinit CODE >999:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+7ED cinit CODE >1000:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+7EE cinit CODE >1001:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+7EF cinit CODE >1002:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+7F0 cinit CODE >1003:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+7F1 cinit CODE >1004:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+7F2 cinit CODE >1005:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+7F3 cinit CODE >1006:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+7F8 cinit CODE >1010:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+7F9 cinit CODE >1011:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+7FA cinit CODE >1012:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+7FB cinit CODE >1013:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+7FC cinit CODE >1019:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+7FC cinit CODE >1021:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+7FD cinit CODE >1022:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+662 text15 CODE >21:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
+663 text15 CODE >23:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
+665 text15 CODE >25:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
+668 text15 CODE >26:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
+66E text15 CODE >26:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
+67D text15 CODE >27:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
+67E text15 CODE >28:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
+680 text15 CODE >28:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
 689 text15 CODE >28:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
-692 text15 CODE >28:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
-696 text15 CODE >28:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
-69A text15 CODE >29:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
-5F6 text14 CODE >27:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
-5F7 text14 CODE >29:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
-5FA text14 CODE >31:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
-600 text14 CODE >32:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
-606 text14 CODE >34:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
-609 text14 CODE >35:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
-61F text13 CODE >76:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-61F text13 CODE >77:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-625 text13 CODE >78:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-627 text13 CODE >79:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-62F text13 CODE >80:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-639 text13 CODE >81:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-643 text13 CODE >82:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-644 text12 CODE >18:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
-644 text12 CODE >20:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
-64B text12 CODE >21:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
-653 text12 CODE >22:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
-65B text12 CODE >23:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
-663 text12 CODE >24:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
-66A text12 CODE >25:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
-58C text11 CODE >12:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
-58C text11 CODE >14:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
-58F text11 CODE >15:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
-590 text11 CODE >16:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
-591 text11 CODE >17:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
-592 text11 CODE >18:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
-593 text11 CODE >19:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
-60A text10 CODE >11:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
-60B text10 CODE >13:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
+68D text15 CODE >28:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
+691 text15 CODE >29:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
+5ED text14 CODE >27:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
+5EE text14 CODE >29:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
+5F1 text14 CODE >31:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
+5F7 text14 CODE >32:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
+5FD text14 CODE >34:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
+600 text14 CODE >35:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
+616 text13 CODE >80:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+616 text13 CODE >81:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+61C text13 CODE >82:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+61E text13 CODE >83:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+626 text13 CODE >84:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+630 text13 CODE >85:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+63A text13 CODE >86:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+63B text12 CODE >18:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
+63B text12 CODE >20:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
+642 text12 CODE >21:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
+64A text12 CODE >22:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
+652 text12 CODE >23:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
+65A text12 CODE >24:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
+661 text12 CODE >25:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
+573 text11 CODE >12:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
+573 text11 CODE >14:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
+576 text11 CODE >15:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
+577 text11 CODE >16:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
+578 text11 CODE >17:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
+579 text11 CODE >18:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
+57A text11 CODE >19:C:\Users\Celal\Documents\GitHub\PicPong\src\Soft_SPI.c
+601 text10 CODE >11:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
+602 text10 CODE >13:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
+607 text10 CODE >14:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
+608 text10 CODE >15:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
 610 text10 CODE >14:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
-611 text10 CODE >15:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
-619 text10 CODE >14:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
-61E text10 CODE >16:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
-5BC text9 CODE >70:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5BC text9 CODE >71:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5C0 text9 CODE >72:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5C1 text9 CODE >73:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5C7 text9 CODE >74:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-594 text8 CODE >42:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-594 text8 CODE >43:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-59A text8 CODE >44:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-59C text8 CODE >46:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-59D text8 CODE >47:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-59E text7 CODE >49:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-59E text7 CODE >50:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5A4 text7 CODE >51:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5A6 text7 CODE >53:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5A7 text7 CODE >54:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5A8 text6 CODE >56:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5A8 text6 CODE >57:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5AE text6 CODE >58:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5B0 text6 CODE >60:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5B1 text6 CODE >61:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5B2 text5 CODE >63:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5B2 text5 CODE >64:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5B8 text5 CODE >65:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5BA text5 CODE >67:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5BB text5 CODE >68:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-6F5 text4 CODE >118:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-6F5 text4 CODE >120:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-6FC text4 CODE >120:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-700 text4 CODE >120:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-70B text4 CODE >120:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-70F text4 CODE >120:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-713 text4 CODE >121:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-718 text4 CODE >121:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-71A text4 CODE >123:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-71E text4 CODE >123:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-722 text4 CODE >125:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-72A text4 CODE >126:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-72D text4 CODE >126:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-72F text4 CODE >128:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-737 text4 CODE >128:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-743 text4 CODE >128:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-74A text4 CODE >130:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-752 text4 CODE >131:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5D5 text3 CODE >91:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5D6 text3 CODE >92:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5DC text3 CODE >93:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5DE text3 CODE >95:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5E0 text3 CODE >95:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5E2 text3 CODE >96:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5C8 text2 CODE >84:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5C9 text2 CODE >85:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5CF text2 CODE >86:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5D1 text2 CODE >88:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5D4 text2 CODE >89:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-69B text1 CODE >98:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-69B text1 CODE >99:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-6A1 text1 CODE >100:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-6A7 text1 CODE >101:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-6AE text1 CODE >102:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-6B6 text1 CODE >103:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-6B7 text1 CODE >104:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-6BE text1 CODE >105:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-6C7 text1 CODE >108:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-6CD text1 CODE >109:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-6D8 text1 CODE >110:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-6E0 text1 CODE >111:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-6E1 text1 CODE >112:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-6EC text1 CODE >113:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-6F4 text1 CODE >116:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-753 maintext CODE >133:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-753 maintext CODE >134:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-758 maintext CODE >135:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-75D maintext CODE >139:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-76B maintext CODE >140:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-773 maintext CODE >141:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-77B maintext CODE >142:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-783 maintext CODE >143:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-78B maintext CODE >146:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-790 maintext CODE >147:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-79D maintext CODE >148:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-7A3 maintext CODE >149:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-7AF maintext CODE >153:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-7B6 maintext CODE >154:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-7C3 maintext CODE >155:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-7C9 maintext CODE >156:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-7D5 maintext CODE >157:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-7D5 maintext CODE >158:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
-5E3 inittext CODE >980:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-5E3 inittext CODE >981:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-5E4 inittext CODE >982:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-5E5 inittext CODE >983:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-5E6 inittext CODE >984:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-5E7 inittext CODE >991:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-5E7 inittext CODE >992:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-5EC inittext CODE >993:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-5ED inittext CODE >994:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-5EE inittext CODE >995:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-5EF inittext CODE >996:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-5F0 inittext CODE >997:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-5F1 inittext CODE >998:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-5F2 inittext CODE >999:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-5F3 inittext CODE >1000:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-5F4 inittext CODE >1001:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
-5F5 inittext CODE >1002:C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_1.s
+615 text10 CODE >16:C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
+5CB text9 CODE >73:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5CB text9 CODE >74:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5CF text9 CODE >75:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5D0 text9 CODE >76:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5D6 text9 CODE >77:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5D9 text9 CODE >78:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+584 text8 CODE >41:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+584 text8 CODE >42:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+58A text8 CODE >43:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+58B text8 CODE >44:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+58D text8 CODE >46:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+58E text8 CODE >47:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+58F text7 CODE >49:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+58F text7 CODE >50:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+595 text7 CODE >51:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+596 text7 CODE >52:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+598 text7 CODE >54:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+599 text7 CODE >55:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+59A text6 CODE >57:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+59A text6 CODE >58:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5A0 text6 CODE >59:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5A1 text6 CODE >60:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5A3 text6 CODE >62:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5A4 text6 CODE >63:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5A5 text5 CODE >65:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5A5 text5 CODE >66:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5AB text5 CODE >67:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5AC text5 CODE >68:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5AE text5 CODE >70:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5AF text5 CODE >71:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+6F4 text4 CODE >122:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+6F4 text4 CODE >123:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+6FA text4 CODE >125:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+6FF text4 CODE >125:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+703 text4 CODE >125:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+70E text4 CODE >125:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+712 text4 CODE >125:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+716 text4 CODE >126:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+71B text4 CODE >126:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+71D text4 CODE >128:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+721 text4 CODE >128:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+725 text4 CODE >130:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+72D text4 CODE >131:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+730 text4 CODE >131:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+732 text4 CODE >133:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+73A text4 CODE >133:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+746 text4 CODE >133:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+74D text4 CODE >135:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+754 text4 CODE >136:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+75E text4 CODE >137:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5BD text3 CODE >95:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5BE text3 CODE >96:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5C4 text3 CODE >97:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5C6 text3 CODE >99:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5C8 text3 CODE >99:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5CA text3 CODE >100:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5B0 text2 CODE >88:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5B1 text2 CODE >89:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5B7 text2 CODE >90:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5B9 text2 CODE >92:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5BC text2 CODE >93:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+692 text1 CODE >102:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+692 text1 CODE >103:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+698 text1 CODE >104:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+69E text1 CODE >105:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+6A9 text1 CODE >106:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+6B1 text1 CODE >107:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+6B2 text1 CODE >108:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+6BD text1 CODE >109:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+6C6 text1 CODE >112:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+6CC text1 CODE >113:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+6D7 text1 CODE >114:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+6DF text1 CODE >115:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+6E0 text1 CODE >116:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+6EB text1 CODE >117:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+6F3 text1 CODE >120:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+75F maintext CODE >139:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+75F maintext CODE >140:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+764 maintext CODE >141:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+769 maintext CODE >145:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+777 maintext CODE >146:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+77F maintext CODE >147:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+787 maintext CODE >148:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+78F maintext CODE >149:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+797 maintext CODE >152:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+79C maintext CODE >153:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+7A9 maintext CODE >154:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+7AF maintext CODE >155:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+7BB maintext CODE >159:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+7C2 maintext CODE >160:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+7CF maintext CODE >161:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+7D5 maintext CODE >162:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+7E1 maintext CODE >163:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+7E1 maintext CODE >164:C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+5DA inittext CODE >971:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+5DA inittext CODE >972:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+5DB inittext CODE >973:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+5DC inittext CODE >974:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+5DD inittext CODE >975:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+5DE inittext CODE >982:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+5DE inittext CODE >983:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+5E3 inittext CODE >984:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+5E4 inittext CODE >985:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+5E5 inittext CODE >986:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+5E6 inittext CODE >987:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+5E7 inittext CODE >988:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+5E8 inittext CODE >989:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+5E9 inittext CODE >990:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+5EA inittext CODE >991:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+5EB inittext CODE >992:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
+5EC inittext CODE >993:C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_1.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -277,47 +278,44 @@ __HidataBANK0 0 0 ABS 0 idataBANK0 -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __L__absolute__ 0 0 ABS 0 __absolute__ -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_12.o
-_main EA6 0 CODE 0 maintext dist/default/production\src.production.o
-_updatePlayerPosition D36 0 CODE 0 text1 dist/default/production\src.production.o
+___sp 0 0 STACK 2 stack C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_12.o
+_main EBE 0 CODE 0 maintext dist/default/production\src.production.o
+_updatePlayerPosition D24 0 CODE 0 text1 dist/default/production\src.production.o
 btemp 7E 0 ABS 0 - dist/default/production\src.production.o
-___stack_hi 0 0 STACK 2 stack C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_12.o
-___stack_lo 0 0 STACK 2 stack C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_12.o
-_MAX7219_write BEC 0 CODE 0 text14 dist/default/production\src.production.o
-start 0 0 CODE 0 init C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_12.o
-_ballYState 7C 0 COMMON 1 dataCOMMON dist/default/production\src.production.o
-_updateBallPosition$71 7A 0 COMMON 1 cstackCOMMON dist/default/production\src.production.o
+___stack_hi 0 0 STACK 2 stack C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_12.o
+___stack_lo 0 0 STACK 2 stack C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_12.o
+_MAX7219_write BDA 0 CODE 0 text14 dist/default/production\src.production.o
+start 0 0 CODE 0 init C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_12.o
+_ballYState 26 0 BANK0 1 dataBANK0 dist/default/production\src.production.o
+_updateBallPosition$98 7C 0 COMMON 1 cstackCOMMON dist/default/production\src.production.o
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
-__end_of_SPI_write D36 0 CODE 0 text15 dist/default/production\src.production.o
+__end_of_SPI_write D24 0 CODE 0 text15 dist/default/production\src.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-__HdataCOMMON 0 0 ABS 0 dataCOMMON -
-intlevel0 0 0 ENTRY 0 functab C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_12.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_12.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_12.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_12.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_12.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_12.o
-_initGame C3E 0 CODE 0 text13 dist/default/production\src.production.o
+updateBallPosition@ballXprev 7A 0 COMMON 1 cstackCOMMON dist/default/production\src.production.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_12.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_12.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_12.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_12.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_12.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_12.o
+_initGame C2C 0 CODE 0 text13 dist/default/production\src.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\src.production.o
 __Hfunctab 0 0 ENTRY 0 functab -
-_SPI_write CD6 0 CODE 0 text15 dist/default/production\src.production.o
+_SPI_write CC4 0 CODE 0 text15 dist/default/production\src.production.o
 __Hclrtext 0 0 ABS 0 clrtext -
-__end_of_initGame C88 0 CODE 0 text13 dist/default/production\src.production.o
+__end_of_initGame C76 0 CODE 0 text13 dist/default/production\src.production.o
 MAX7219_write@data 75 0 COMMON 1 cstackCOMMON dist/default/production\src.production.o
-_buttonGoUp B90 0 CODE 0 text2 dist/default/production\src.production.o
-__pidataCOMMON B06 0 CODE 0 idataCOMMON dist/default/production\src.production.o
-__LdataCOMMON 0 0 ABS 0 dataCOMMON -
+_buttonGoUp B60 0 CODE 0 text2 dist/default/production\src.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_12.o
-___stacklo 0 0 ABS 0 - C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_12.o
-__LidataCOMMON 0 0 ABS 0 idataCOMMON -
-__end_of_buttonGoUp BAA 0 CODE 0 text2 dist/default/production\src.production.o
-_MAX7219_init C14 0 CODE 0 text10 dist/default/production\src.production.o
-_p1State 7D 0 COMMON 1 dataCOMMON dist/default/production\src.production.o
-_p2State 26 0 BANK0 1 dataBANK0 dist/default/production\src.production.o
-start_initialization FBC 0 CODE 0 cinit dist/default/production\src.production.o
-__end_of_MAX7219_write C14 0 CODE 0 text14 dist/default/production\src.production.o
-__pcstackBANK0 27 0 BANK0 1 cstackBANK0 dist/default/production\src.production.o
+___stackhi 0 0 ABS 0 - C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_12.o
+___stacklo 0 0 ABS 0 - C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_12.o
+__end_of_buttonGoUp B7A 0 CODE 0 text2 dist/default/production\src.production.o
+_MAX7219_init C02 0 CODE 0 text10 dist/default/production\src.production.o
+_p1State 28 0 BANK0 1 dataBANK0 dist/default/production\src.production.o
+_p2State 27 0 BANK0 1 dataBANK0 dist/default/production\src.production.o
+start_initialization FD4 0 CODE 0 cinit dist/default/production\src.production.o
+__end_of_MAX7219_write C02 0 CODE 0 text14 dist/default/production\src.production.o
+__pcstackBANK0 29 0 BANK0 1 cstackBANK0 dist/default/production\src.production.o
 SPI_write@Tx 73 0 COMMON 1 cstackCOMMON dist/default/production\src.production.o
 MAX7219_write@regName 76 0 COMMON 1 cstackCOMMON dist/default/production\src.production.o
 _TRISC0 438 0 ABS 0 - dist/default/production\src.production.o
@@ -325,10 +323,10 @@ _TRISC1 439 0 ABS 0 - dist/default/production\src.production.o
 _TRISC2 43A 0 ABS 0 - dist/default/production\src.production.o
 _TRISC3 43B 0 ABS 0 - dist/default/production\src.production.o
 _TRISC4 43C 0 ABS 0 - dist/default/production\src.production.o
-_button3pressed 2E 0 BANK0 1 bssBANK0 dist/default/production\src.production.o
-_buttonGoDown BAA 0 CODE 0 text3 dist/default/production\src.production.o
+_button3pressed 30 0 BANK0 1 bssBANK0 dist/default/production\src.production.o
+_buttonGoDown B7A 0 CODE 0 text3 dist/default/production\src.production.o
 buttonGoUp@currentState 71 0 COMMON 1 cstackCOMMON dist/default/production\src.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_12.o
+___int_sp 0 0 STACK 2 stack C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_12.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -337,20 +335,21 @@ __Hcinit 1000 0 CODE 0 cinit -
 __Hstack 0 0 STACK 2 stack -
 __Hmaintext 0 0 ABS 0 maintext -
 __Hcommon 0 0 ABS 0 common -
-_readButton0State B28 0 CODE 0 text8 dist/default/production\src.production.o
-_readButton1State B3C 0 CODE 0 text7 dist/default/production\src.production.o
+_readButton0State B08 0 CODE 0 text8 dist/default/production\src.production.o
+_readButton1State B1E 0 CODE 0 text7 dist/default/production\src.production.o
 __Lbank0 0 0 ABS 0 bank0 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Lbank2 0 0 ABS 0 bank2 -
 __Lbank3 0 0 ABS 0 bank3 -
-__Lcinit FBC 0 CODE 0 cinit -
+__Lcinit FD4 0 CODE 0 cinit -
 __Lstack 0 0 STACK 2 stack -
-_readButton2State B50 0 CODE 0 text6 dist/default/production\src.production.o
-_button2pressed 2F 0 BANK0 1 bssBANK0 dist/default/production\src.production.o
+_readButton2State B34 0 CODE 0 text6 dist/default/production\src.production.o
+_button2pressed 31 0 BANK0 1 bssBANK0 dist/default/production\src.production.o
 __Linittext 0 0 ABS 0 inittext -
-_readButton3State B64 0 CODE 0 text5 dist/default/production\src.production.o
+_PORTBbits 6 0 ABS 0 - dist/default/production\src.production.o
+_readButton3State B4A 0 CODE 0 text5 dist/default/production\src.production.o
 buttonGoDown@currentState 71 0 COMMON 1 cstackCOMMON dist/default/production\src.production.o
-__end_of_MAX7219_init C3E 0 CODE 0 text10 dist/default/production\src.production.o
+__end_of_MAX7219_init C2C 0 CODE 0 text10 dist/default/production\src.production.o
 __Habs1 0 0 ABS 0 abs1 -
 __Hcode 0 0 ABS 0 code -
 __Hheap 0 0 HEAP 7 heap -
@@ -373,10 +372,6 @@ __Lsivt 0 0 CODE 0 sivt -
 __Ltext 0 0 ABS 0 text -
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-_RB0 30 0 ABS 0 - dist/default/production\src.production.o
-_RB1 31 0 ABS 0 - dist/default/production\src.production.o
-_RB2 32 0 ABS 0 - dist/default/production\src.production.o
-_RB3 33 0 ABS 0 - dist/default/production\src.production.o
 _RC0 38 0 ABS 0 - dist/default/production\src.production.o
 _RC1 39 0 ABS 0 - dist/default/production\src.production.o
 _RC2 3A 0 ABS 0 - dist/default/production\src.production.o
@@ -384,39 +379,38 @@ _RC4 3C 0 ABS 0 - dist/default/production\src.production.o
 __S0 800 0 ABS 0 - -
 __S1 7E 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_SPI_init B18 0 CODE 0 text11 dist/default/production\src.production.o
-__HidataCOMMON 0 0 ABS 0 idataCOMMON -
-_button1pressed 30 0 BANK0 1 bssBANK0 dist/default/production\src.production.o
-__end_of_buttonGoDown BC6 0 CODE 0 text3 dist/default/production\src.production.o
-__end_of_SPI_init B28 0 CODE 0 text11 dist/default/production\src.production.o
+_SPI_init AE6 0 CODE 0 text11 dist/default/production\src.production.o
+_button1pressed 32 0 BANK0 1 bssBANK0 dist/default/production\src.production.o
+__end_of_buttonGoDown B96 0 CODE 0 text3 dist/default/production\src.production.o
+__end_of_SPI_init AF6 0 CODE 0 text11 dist/default/production\src.production.o
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_12.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_12.o
 __pdataBANK0 20 0 BANK0 1 dataBANK0 dist/default/production\src.production.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
-__end_of_initPorts B90 0 CODE 0 text9 dist/default/production\src.production.o
-_button0pressed 31 0 BANK0 1 bssBANK0 dist/default/production\src.production.o
-__end_of_readButton0State B3C 0 CODE 0 text8 dist/default/production\src.production.o
-__ptext10 C14 0 CODE 0 text10 dist/default/production\src.production.o
-__ptext11 B18 0 CODE 0 text11 dist/default/production\src.production.o
-__ptext12 C88 0 CODE 0 text12 dist/default/production\src.production.o
-__ptext13 C3E 0 CODE 0 text13 dist/default/production\src.production.o
-__ptext14 BEC 0 CODE 0 text14 dist/default/production\src.production.o
-__ptext15 CD6 0 CODE 0 text15 dist/default/production\src.production.o
-__end_of_readButton1State B50 0 CODE 0 text7 dist/default/production\src.production.o
-__pmaintext EA6 0 CODE 0 maintext dist/default/production\src.production.o
+__end_of_initPorts BB4 0 CODE 0 text9 dist/default/production\src.production.o
+_button0pressed 33 0 BANK0 1 bssBANK0 dist/default/production\src.production.o
+__end_of_readButton0State B1E 0 CODE 0 text8 dist/default/production\src.production.o
+__ptext10 C02 0 CODE 0 text10 dist/default/production\src.production.o
+__ptext11 AE6 0 CODE 0 text11 dist/default/production\src.production.o
+__ptext12 C76 0 CODE 0 text12 dist/default/production\src.production.o
+__ptext13 C2C 0 CODE 0 text13 dist/default/production\src.production.o
+__ptext14 BDA 0 CODE 0 text14 dist/default/production\src.production.o
+__ptext15 CC4 0 CODE 0 text15 dist/default/production\src.production.o
+__end_of_readButton1State B34 0 CODE 0 text7 dist/default/production\src.production.o
+__pmaintext EBE 0 CODE 0 maintext dist/default/production\src.production.o
 MAX7219_init@noChips 77 0 COMMON 1 cstackCOMMON dist/default/production\src.production.o
-__end_of_readButton2State B64 0 CODE 0 text6 dist/default/production\src.production.o
-__end_of_updatePlayerPosition DEA 0 CODE 0 text1 dist/default/production\src.production.o
+__end_of_readButton2State B4A 0 CODE 0 text6 dist/default/production\src.production.o
+__end_of_updatePlayerPosition DE8 0 CODE 0 text1 dist/default/production\src.production.o
 __Lcommon 0 0 ABS 0 common -
-__end_of_readButton3State B78 0 CODE 0 text5 dist/default/production\src.production.o
+__end_of_readButton3State B60 0 CODE 0 text5 dist/default/production\src.production.o
 __Hinittext 0 0 ABS 0 inittext -
-_initPorts B78 0 CODE 0 text9 dist/default/production\src.production.o
+_initPorts B96 0 CODE 0 text9 dist/default/production\src.production.o
 updatePlayerPosition@player 77 0 COMMON 1 cstackCOMMON dist/default/production\src.production.o
 __Lspace_0 0 0 ABS 0 - -
 __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
-init_fetch0 BC6 0 CODE 0 inittext dist/default/production\src.production.o
+init_fetch0 BB4 0 CODE 0 inittext dist/default/production\src.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __Lend_init 0 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
@@ -425,48 +419,48 @@ __Hintentry 0 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 0 0 CODE 0 reset_vec -
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
-__ptext1 D36 0 CODE 0 text1 dist/default/production\src.production.o
-__ptext2 B90 0 CODE 0 text2 dist/default/production\src.production.o
-__ptext3 BAA 0 CODE 0 text3 dist/default/production\src.production.o
-__ptext4 DEA 0 CODE 0 text4 dist/default/production\src.production.o
-__ptext5 B64 0 CODE 0 text5 dist/default/production\src.production.o
-__ptext6 B50 0 CODE 0 text6 dist/default/production\src.production.o
-__ptext7 B3C 0 CODE 0 text7 dist/default/production\src.production.o
-__ptext8 B28 0 CODE 0 text8 dist/default/production\src.production.o
-__ptext9 B78 0 CODE 0 text9 dist/default/production\src.production.o
+__ptext1 D24 0 CODE 0 text1 dist/default/production\src.production.o
+__ptext2 B60 0 CODE 0 text2 dist/default/production\src.production.o
+__ptext3 B7A 0 CODE 0 text3 dist/default/production\src.production.o
+__ptext4 DE8 0 CODE 0 text4 dist/default/production\src.production.o
+__ptext5 B4A 0 CODE 0 text5 dist/default/production\src.production.o
+__ptext6 B34 0 CODE 0 text6 dist/default/production\src.production.o
+__ptext7 B1E 0 CODE 0 text7 dist/default/production\src.production.o
+__ptext8 B08 0 CODE 0 text8 dist/default/production\src.production.o
+__ptext9 B96 0 CODE 0 text9 dist/default/production\src.production.o
 _ballDirX 24 0 BANK0 1 dataBANK0 dist/default/production\src.production.o
 _ballDirY 22 0 BANK0 1 dataBANK0 dist/default/production\src.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __H__absolute__ 0 0 ABS 0 __absolute__ -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-___heap_hi 0 0 ABS 0 - C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_12.o
-___heap_lo 0 0 ABS 0 - C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_12.o
-_MAX7219_config C88 0 CODE 0 text12 dist/default/production\src.production.o
+___heap_hi 0 0 ABS 0 - C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_12.o
+___heap_lo 0 0 ABS 0 - C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_12.o
+_MAX7219_config C76 0 CODE 0 text12 dist/default/production\src.production.o
 __end_of__initialization FF8 0 CODE 0 cinit dist/default/production\src.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
-__pidataBANK0 B0A 0 CODE 0 idataBANK0 dist/default/production\src.production.o
+__pidataBANK0 AF6 0 CODE 0 idataBANK0 dist/default/production\src.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\src.production.o
-__end_of_updateBallPosition EA6 0 CODE 0 text4 dist/default/production\src.production.o
+__end_of_updateBallPosition EBE 0 CODE 0 text4 dist/default/production\src.production.o
 __Hend_init 6 0 CODE 0 end_init -
-init_ram0 BCE 0 CODE 0 inittext dist/default/production\src.production.o
-__end_of_main FBC 0 CODE 0 maintext dist/default/production\src.production.o
+init_ram0 BBC 0 CODE 0 inittext dist/default/production\src.production.o
+__end_of_main FD4 0 CODE 0 maintext dist/default/production\src.production.o
+_PORTB 6 0 ABS 0 - dist/default/production\src.production.o
 _TRISB 86 0 ABS 0 - dist/default/production\src.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\src.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 _ballX 20 0 BANK0 1 dataBANK0 dist/default/production\src.production.o
 __HdataBANK0 0 0 ABS 0 dataBANK0 -
-__end_of_MAX7219_config CD6 0 CODE 0 text12 dist/default/production\src.production.o
+__end_of_MAX7219_config CC4 0 CODE 0 text12 dist/default/production\src.production.o
 updatePlayerPosition@direction 79 0 COMMON 1 cstackCOMMON dist/default/production\src.production.o
-__initialization FBC 0 CODE 0 cinit dist/default/production\src.production.o
-__pbssBANK0 2E 0 BANK0 1 bssBANK0 dist/default/production\src.production.o
-__pdataCOMMON 7C 0 COMMON 1 dataCOMMON dist/default/production\src.production.o
-_updateBallPosition DEA 0 CODE 0 text4 dist/default/production\src.production.o
+__initialization FD4 0 CODE 0 cinit dist/default/production\src.production.o
+__pbssBANK0 30 0 BANK0 1 bssBANK0 dist/default/production\src.production.o
+_updateBallPosition DE8 0 CODE 0 text4 dist/default/production\src.production.o
 SPI_write@send 72 0 COMMON 1 cstackCOMMON dist/default/production\src.production.o
-___int_stack_hi 0 0 STACK 2 stack C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_12.o
-___int_stack_lo 0 0 STACK 2 stack C:\Users\Celal\AppData\Local\Temp\xcAsass.\driver_tmp_12.o
+___int_stack_hi 0 0 STACK 2 stack C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_12.o
+___int_stack_lo 0 0 STACK 2 stack C:\Users\Celal\AppData\Local\Temp\xcAs8h8.\driver_tmp_12.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -492,29 +486,28 @@ ___int_stack_lo 0 0 STACK 2 stack C:\Users\Celal\AppData\Local\Temp\xcAsass.\dri
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-cinit 0 7DE FBC 22 2
-text1 0 69B D36 5A 2
-text2 0 5C8 B90 D 2
-text3 0 5D5 BAA E 2
-text4 0 6F5 DEA 5E 2
-text5 0 5B2 B64 A 2
-text6 0 5A8 B50 A 2
-text7 0 59E B3C A 2
-text8 0 594 B28 A 2
-text9 0 5BC B78 C 2
-text10 0 60A C14 15 2
-text11 0 58C B18 8 2
-text12 0 644 C88 27 2
-text13 0 61F C3E 25 2
-text14 0 5F6 BEC 14 2
-text15 0 66B CD6 30 2
-idataCOMMON 0 583 B06 2 2
-maintext 0 753 EA6 8B 2
+cinit 0 7EA FD4 16 2
+text1 0 692 D24 62 2
+text2 0 5B0 B60 D 2
+text3 0 5BD B7A E 2
+text4 0 6F4 DE8 6B 2
+text5 0 5A5 B4A B 2
+text6 0 59A B34 B 2
+text7 0 58F B1E B 2
+text8 0 584 B08 B 2
+text9 0 5CB B96 F 2
+text10 0 601 C02 15 2
+text11 0 573 AE6 8 2
+text12 0 63B C76 27 2
+text13 0 616 C2C 25 2
+text14 0 5ED BDA 14 2
+text15 0 662 CC4 30 2
+maintext 0 75F EBE 8B 2
 cstackCOMMON 1 70 70 E 1
-inittext 0 5E3 BC6 13 2
+inittext 0 5DA BB4 13 2
 reset_vec 0 0 0 3 2
-idataBANK0 0 585 B0A 7 2
-dataBANK0 1 20 20 12 1
+idataBANK0 0 57B AF6 9 2
+dataBANK0 1 20 20 14 1
 # %NOTES Section
 # This section contains data of all the note-psects.  The beginning of the section
 # is indicated by %NOTES. The first line indicates the name and decimal
