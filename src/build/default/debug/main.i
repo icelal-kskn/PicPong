@@ -2074,7 +2074,7 @@ char SPI_read(void);
 # 18 "./MAX7219_Prototypes.h"
 void MAX7219_init(char noChips);
 void MAX7219_config(char chip);
-void MAX7219_write(char regName,char data);
+void MAX7219_write(char regName, char data);
 void MAX7219_displayText(char* text);
 void MAX7219_NoOperation(void);
 # 5 "./MAX7219.h" 2
@@ -2084,116 +2084,191 @@ void MAX7219_init(char noChips);
 
 void MAX7219_config(char chip);
 
-void MAX7219_write(char regName,char data);
+void MAX7219_write(char regName, char data);
 
 void MAX7219_NoOperation();
 
 void MAX7219_draw_ball(char* ball);
 
-void initPlayersPad();
-void updatePlayerPosition(int player, int direction);
+void initGame();
+void initPorts();
+void updateBallPosition();
+void clearGame();
 # 5 "main.c" 2
-# 28 "main.c"
-_Bool button0pressed = 0;
-_Bool button1pressed = 0;
-_Bool button2pressed = 0;
-_Bool button3pressed = 0;
+# 42 "main.c"
+char p1State = 0b00111100;
+char p2State = 0b00111100;
 
-char p1State = 0b00000010 | 0b00000100 | 0b00001000 | 0b00010000 ;
-char p2State = 0b00000010 | 0b00000100 | 0b00001000 | 0b00010000 ;
+int ballDirX = -1;
+int ballDirY = 1;
+int ballX = 4;
+char ballYState = 0b00001000;
 
-int ballX = 4, ballY = 4;
-int ballDirX = 1, ballDirY = 1;
-
-
-_Bool readButton0State() {
-    return !RB0;
-}
-_Bool readButton1State() {
-    return !RB1;
-}
-_Bool readButton2State() {
-
-    return !RB2;
-}
-_Bool readButton3State() {
-
-    return !RB3;
+void initGame() {
+    ballX = 4;
+    ballYState = 0b00001000;
+    MAX7219_write(8, p1State);
+    MAX7219_write(1, p2State);
+    MAX7219_write(ballX, ballYState);
 }
 
 
-int main(int argc, char** argv)
-{
-  TRISBbits.TRISB0 = 1;
-  TRISBbits.TRISB1 = 1;
-  TRISBbits.TRISB2 = 1;
-  TRISBbits.TRISB3 = 1;
-  MAX7219_init(1);
-  initPlayersPad();
-
-  while(1)
-    {
-
-
-      button0pressed = readButton0State();
-      button1pressed = readButton1State();
-      button2pressed = readButton2State();
-      button3pressed = readButton3State();
-
-
-      if (button0pressed ) {
-          updatePlayerPosition(1, 1);
-      } else if (button1pressed ) {
-          updatePlayerPosition(1, 0);
-      }
-
-
-      if (button2pressed ) {
-          updatePlayerPosition(2, 1);
-      } else if (button3pressed ) {
-          updatePlayerPosition(2, 0);
-      }
-
-       _delay((unsigned long)((200)*(800000000/4000.0)));
-    }
-
-
-  return (0);
+int readButton0() {
+    return RB0;
+}
+int readButton1() {
+    return RB1;
+}
+int readButton2() {
+    return RB2;
+}
+int readButton3() {
+    return RB3;
 }
 
-void initPlayersPad(){
-    MAX7219_write(8 , p1State );
-    MAX7219_write(1 , p2State );
-}
-
-char buttonGoUp(char currentState){
-    return currentState << 1;
-}
-
-char buttonGoDown(char currentState){
-    return currentState >> 1;
-}
-
-void updatePlayerPosition(int player, int direction) {
-    if (player == 1) {
-        if (direction == 1) {
-            p1State = buttonGoUp(p1State);
-            MAX7219_write(5,0b00010000);
-            MAX7219_write(8, p1State);
-        } else {
-            p1State = buttonGoDown(p1State);
-            MAX7219_write(6,0b00100000);
-            MAX7219_write(8, p1State);
-        }
-    } else {
-        if (direction == 1) {
-            p2State = buttonGoUp(p2State);
-            MAX7219_write(4,0b00001000);
-            MAX7219_write(1, p2State);
-        } else {
-            p2State = buttonGoDown(p2State);
-            MAX7219_write(3,0b00000100);
-            MAX7219_write(1, p2State);
+void buttonGoUp(int player) {
+    if (player ==1){
+        switch (p1State){
+            case 0b01110001:
+                p1State=0b01111000;
+                MAX7219_write(7, p1State);
+                break;
+            case 0b01111000:
+                p1State=0b00111100;
+                MAX7219_write(7, p1State);
+                break;
+            case 0b00111100:
+                p1State=0b00011110;
+                MAX7219_write(7, p1State);
+                break;
+            case 0b00011110:
+                p1State=0b10000111;
+                MAX7219_write(7, p1State);
+                break;
+            case 0b10000111:
+                p1State=0b10000111;
+                MAX7219_write(7, p1State);
+                break;
+            default:
+                p1State =0b00111100;
+                MAX7219_write(7, p1State);
+                break;
         }
     }
+    else{
+        switch (p2State){
+            case 0b01110001:
+                p2State=0b01111000;
+                MAX7219_write(2, p2State);
+                break;
+            case 0b01111000:
+                p2State=0b00111100;
+                MAX7219_write(2, p2State);
+                break;
+            case 0b00111100:
+                p2State=0b00011110;
+                MAX7219_write(2, p2State);
+                break;
+            case 0b00011110:
+                p2State=0b10000111;
+                MAX7219_write(2, p2State);
+                break;
+            case 0b10000111:
+                p2State=0b10000111;
+                MAX7219_write(2, p2State);
+                break;
+            default:
+                p2State = 0b00111100;
+                MAX7219_write(2, p2State);
+                break;
+        }
+    }
+}
+
+void buttonGoDown(int player) {
+    if (player ==1){
+        switch (p1State){
+            case 0b01110001:
+                p1State=0b01110001;
+                MAX7219_write(7, p1State);
+                break;
+            case 0b01111000:
+                p1State=0b01110001;
+                MAX7219_write(7, p1State);
+                break;
+            case 0b00111100:
+                p1State=0b01111000;
+                MAX7219_write(7, p1State);
+                break;
+            case 0b00011110:
+                p1State=0b00111100;
+                MAX7219_write(7, p1State);
+                break;
+            case 0b10000111:
+                p1State=0b00011110;
+                MAX7219_write(7, p1State);
+                break;
+            default:
+                p1State = 0b00111100;
+                MAX7219_write(7, p1State);
+                break;
+        }
+    }
+    else{
+        switch (p2State){
+            case 0b01110001:
+                p2State=0b01110001;
+                MAX7219_write(2, p2State);
+                break;
+            case 0b01111000:
+                p2State=0b01110001;
+                MAX7219_write(2, p2State);
+                break;
+            case 0b00111100:
+                p2State=0b01111000;
+                MAX7219_write(2, p2State);
+                break;
+            case 0b00011110:
+                p2State=0b00111100;
+                MAX7219_write(2, p2State);
+                break;
+            case 0b10000111:
+                p2State=0b00011110;
+                MAX7219_write(2, p2State);
+                break;
+            default:
+                p2State = 0b00000010 | 0b00000100 | 0b00001000 | 0b00010000;
+                MAX7219_write(2, p2State);
+                break;
+        }
+    }
+}
+
+int main(int argc, char** argv) {
+    TRISB = 0x0F;
+    TRISC = 0;
+    MAX7219_init(1);
+    MAX7219_write(1, 0b10000111);
+    MAX7219_write(2, 0b00011110);
+    MAX7219_write(3, 0b00111100);
+    MAX7219_write(4, 0b01111000);
+    MAX7219_write(5, 0b01110001);
+    while(1){
+
+        if(readButton0() == 1){
+            buttonGoUp(1);
+        }
+        if(readButton1() == 1){
+            buttonGoDown(1);
+        }
+        if(readButton2() == 1){
+            buttonGoUp(2);
+        }
+        if(readButton3() == 1){
+            buttonGoDown(2);
+        }
+
+    }
+
+    return (0);
 }

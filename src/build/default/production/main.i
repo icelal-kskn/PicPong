@@ -2074,7 +2074,7 @@ char SPI_read(void);
 # 18 "./MAX7219_Prototypes.h"
 void MAX7219_init(char noChips);
 void MAX7219_config(char chip);
-void MAX7219_write(char regName,char data);
+void MAX7219_write(char regName, char data);
 void MAX7219_displayText(char* text);
 void MAX7219_NoOperation(void);
 # 5 "./MAX7219.h" 2
@@ -2084,68 +2084,25 @@ void MAX7219_init(char noChips);
 
 void MAX7219_config(char chip);
 
-void MAX7219_write(char regName,char data);
+void MAX7219_write(char regName, char data);
 
 void MAX7219_NoOperation();
 
 void MAX7219_draw_ball(char* ball);
 
 void initGame();
-void updatePlayerPosition(int player, int direction);
+void initPorts();
 void updateBallPosition();
+void clearGame();
 # 5 "main.c" 2
-# 28 "main.c"
-_Bool button0pressed = 0;
-_Bool button1pressed = 0;
-_Bool button2pressed = 0;
-_Bool button3pressed = 0;
-
-char p1State = 0b00000010 | 0b00000100 | 0b00001000 | 0b00010000;
-char p2State = 0b00000010 | 0b00000100 | 0b00001000 | 0b00010000;
+# 43 "main.c"
+char p1State = 0b00011110;
+char p2State = 0b00011110;
 
 int ballDirX = -1;
 int ballDirY = 1;
 int ballX = 4;
 char ballYState = 0b00001000;
-
-_Bool readButton0State() {
-    if (PORTBbits.RB0 == 1) {
-        PORTBbits.RB0 = 0;
-        return 1;
-    }
-    return 0;
-}
-
-_Bool readButton1State() {
-    if (PORTBbits.RB1 == 1) {
-        PORTBbits.RB1 = 0 ;
-        return 1;
-    }
-    return 0;
-}
-
-_Bool readButton2State() {
-    if (PORTBbits.RB2 == 1) {
-        PORTBbits.RB2 = 0;
-        return 1;
-    }
-    return 0;
-}
-
-_Bool readButton3State() {
-    if (PORTBbits.RB3 == 1) {
-        PORTBbits.RB3 = 0 ;
-        return 1;
-    }
-    return 0;
-}
-
-void initPorts() {
-    TRISB = 0x0F;
-    TRISC = 0x00;
-    MAX7219_init(1);
-    PORTB = 0x00;
-}
 
 void initGame() {
     ballX = 4;
@@ -2155,83 +2112,162 @@ void initGame() {
     MAX7219_write(ballX, ballYState);
 }
 
-char buttonGoUp(char currentState) {
-    if (currentState & (0b00001000 | 0b00010000 | 0b00100000 | 0b01000000)) {
-        return currentState;
-    }
-    return currentState << 1;
+
+int readButton0() {
+    return RB0;
+}
+int readButton1() {
+    return RB1;
+}
+int readButton2() {
+    return RB2;
+}
+int readButton3() {
+    return RB3;
 }
 
-char buttonGoDown(char currentState) {
-    if (currentState & (0b10000000 | 0b00000001 | 0b00000010 | 0b00000100)) {
-        return currentState;
-    }
-    return currentState >> 1;
-}
-
-void updatePlayerPosition(int player, int direction) {
-    if (player == 1) {
-        if (direction == 1) {
-            p1State = buttonGoUp(p1State);
-            MAX7219_write(8, p1State);
-        } else {
-            p1State = buttonGoDown(p1State);
-            MAX7219_write(8, p1State);
+void buttonGoUp(int player) {
+    if (player ==1){
+        switch (p1State){
+            case 0b10000111:
+                p1State=0b00001111;
+                MAX7219_write(7, p1State);
+                break;
+            case 0b00001111:
+                p1State=0b00011110;
+                MAX7219_write(7, p1State);
+                break;
+            case 0b00011110:
+                p1State=0b00111100;
+                MAX7219_write(7, p1State);
+                break;
+            case 0b00111100:
+                p1State=0b01111000;
+                MAX7219_write(7, p1State);
+                break;
+            case 0b01111000:
+                p1State=0b01111000;
+                MAX7219_write(7, p1State);
+                break;
+            default:
+                p1State =0b00011110;
+                MAX7219_write(7, p1State);
+                break;
         }
-    } else {
-        if (direction == 1) {
-            p2State = buttonGoUp(p2State);
-            MAX7219_write(1, p2State);
-        } else {
-            p2State = buttonGoDown(p2State);
-            MAX7219_write(1, p2State);
+    }
+    else{
+        switch (p2State){
+            case 0b10000111:
+                p2State=0b00001111;
+                MAX7219_write(2, p2State);
+                break;
+            case 0b00001111:
+                p2State=0b00011110;
+                MAX7219_write(2, p2State);
+                break;
+            case 0b00011110:
+                p2State=0b00111100;
+                MAX7219_write(2, p2State);
+                break;
+            case 0b00111100:
+                p2State=0b01111000;
+                MAX7219_write(2, p2State);
+                break;
+            case 0b01111000:
+                p2State=0b01111000;
+                MAX7219_write(2, p2State);
+                break;
+            default:
+                p2State = 0b00011110;
+                MAX7219_write(2, p2State);
+                break;
         }
     }
 }
 
-void updateBallPosition() {
-    int ballXprev= ballX;
-
-    if (ballX < 1 || ballX > 8) {
-        ballDirX = -ballDirX;
+void buttonGoDown(int player) {
+    if (player ==1){
+        switch (p1State){
+            case 0b10000111:
+                p1State=0b10000111;
+                MAX7219_write(7, p1State);
+                break;
+            case 0b00001111:
+                p1State=0b10000111;
+                MAX7219_write(7, p1State);
+                break;
+            case 0b00011110:
+                p1State=0b00001111;
+                MAX7219_write(7, p1State);
+                break;
+            case 0b00111100:
+                p1State=0b00011110;
+                MAX7219_write(7, p1State);
+                break;
+            case 0b01111000:
+                p1State=0b00111100;
+                MAX7219_write(7, p1State);
+                break;
+            default:
+                p1State = 0b00011110;
+                MAX7219_write(7, p1State);
+                break;
+        }
     }
-    ballX += ballDirX;
-
-    if ((ballYState & 0b10000000) || (ballYState & 0b01000000)) {
-        ballDirY = -ballDirY;
+    else{
+        switch (p2State){
+            case 0b10000111:
+                p2State=0b10000111;
+                MAX7219_write(2, p2State);
+                break;
+            case 0b00001111:
+                p2State=0b10000111;
+                MAX7219_write(2, p2State);
+                break;
+            case 0b00011110:
+                p2State=0b00001111;
+                MAX7219_write(2, p2State);
+                break;
+            case 0b00111100:
+                p2State=0b00011110;
+                MAX7219_write(2, p2State);
+                break;
+            case 0b01111000:
+                p2State=0b00111100;
+                MAX7219_write(2, p2State);
+                break;
+            default:
+                p2State = 0b00000010 | 0b00000100 | 0b00001000 | 0b00010000;
+                MAX7219_write(2, p2State);
+                break;
+        }
     }
-    ballYState = (ballDirY == 1) ? ballYState << 1 : ballYState >> 1;
-
-    MAX7219_write(ballXprev, 0b00000000);
-    MAX7219_write(ballX, ballYState);
 }
 
 int main(int argc, char** argv) {
-    initPorts();
-    initGame();
+    TRISB = 0x0F;
+    TRISC = 0;
+    MAX7219_init(1);
+    MAX7219_write(1, 0b10000111);
+    MAX7219_write(2, 0b00001111);
+    MAX7219_write(3, 0b00011110);
+    MAX7219_write(4, 0b00111100);
+    MAX7219_write(5, 0b01111000);
+    while(1){
 
-    while (1) {
-
-        _delay((unsigned long)((10)*(800000000/4000.0)));
-        button0pressed = readButton0State();
-        button1pressed = readButton1State();
-        button2pressed = readButton2State();
-        button3pressed = readButton3State();
-
-
-        if (button0pressed) {
-            updatePlayerPosition(1, 1);
-        } else if (button1pressed) {
-            updatePlayerPosition(1, 0);
+        if(readButton0() == 1){
+            buttonGoUp(1);
+        }
+        if(readButton1() == 1){
+            buttonGoDown(1);
+        }
+        if(readButton2() == 1){
+            buttonGoUp(2);
+        }
+        if(readButton3() == 1){
+            buttonGoDown(2);
         }
 
-
-        if (button2pressed) {
-            updatePlayerPosition(2, 1);
-        } else if (button3pressed) {
-            updatePlayerPosition(2, 0);
-        }
-        updateBallPosition();
     }
 
     return (0);

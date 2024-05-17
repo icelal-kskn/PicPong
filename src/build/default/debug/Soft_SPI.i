@@ -1923,35 +1923,32 @@ char SPI_read(void);
 # 10 "Soft_SPI.c" 2
 
 
-void SPI_init(void)
-{
-  TRISC2 = 0;
-  TRISC0 = 0;
-  TRISC4 = 1;
-  TRISC1 = 0;
-  TRISC3 = 0;
+void SPI_init(void) {
+    TRISC2 = 0;
+    TRISC0 = 0;
+    TRISC4 = 1;
+    TRISC1 = 0;
+    TRISC3 = 0;
 }
 
-void SPI_write(char send)
-{
-  for(int Tx = 0 ; Tx < 8 ; Tx++ )
-  {
-    RC2 = 0;
-    RC0 = ( (send << Tx) & 0x80 ) ? 1 : 0;
-    RC2 = 1;
-  }
+
+void SPI_write(char send) {
+    for (int Tx = 0; Tx < 8; Tx++) {
+        RC2 = 0;
+        RC0 = ((send << Tx) & 0x80) ? 1 : 0;
+        RC2 = 1;
+    }
 }
 
-char SPI_read(void)
-{
-  char data = 0;
 
-  for(int Rx = 0 ; Rx < 8 ; Rx++ )
-  {
-    RC2 = 0;
-    data += (RC4 << (7-Rx));
-    RC2 = 1;
-  }
+char SPI_read(void) {
+    char data = 0;
 
-  return data;
+    for (int Rx = 0; Rx < 8; Rx++) {
+        RC2 = 0;
+        data += (RC4 << (7 - Rx));
+        RC2 = 1;
+    }
+
+    return data;
 }

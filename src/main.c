@@ -3,6 +3,7 @@
 #include <stdbool.h>
 //------------------------------------------------------------------------------
 #include "MAX7219.h"
+
 //------------------------------------------------------------------------------
 #define PLAYER_BLOCK_LEN 8
 #define _XTAL_FREQ 800000000
@@ -23,59 +24,31 @@
 #define Row7 0b01000000
 #define Row0 0b10000000
 
-//columlar sagdan sola 0 1 2 3 4 5 6 7  diye gidiyor
-//rowlar yukaridan asag?ya Row 1 2 3 4 5 6 7 0 diye gidiyor
-bool button0pressed = false;
-bool button1pressed = false;
-bool button2pressed = false;
-bool button3pressed = false;
+#define STATE_5 0b01111000 
+#define STATE_4 0b00111100
+#define STATE_3 0b00011110
+#define STATE_2 0b00001111
+#define STATE_1 0b10000111
+//Stateler do?ru :(
 
-char p1State = Row2 | Row3 | Row4 | Row5;
-char p2State = Row2 | Row3 | Row4 | Row5;
+//(8,Row0), (7,Row0), (6,Row0), (5,Row0), (4,Row0), (3,Row0), (2,Row0), (1,Row0)
+//(8,Row1), (7,Row1), (6,Row1), (5,Row1), (4,Row1), (3,Row1), (2,Row1), (1,Row1)
+//(8,Row2), (7,Row2), (6,Row2), (5,Row2), (4,Row2), (3,Row2), (2,Row2), (1,Row2)
+//(8,Row3), (7,Row3), (6,Row3), (5,Row3), (4,Row3), (3,Row3), (2,Row3), (1,Row3)
+//(8,Row4), (7,Row4), (6,Row4), (5,Row4), (4,Row4), (3,Row4), (2,Row4), (1,Row4)
+//(8,Row5), (7,Row5), (6,Row5), (5,Row5), (4,Row5), (3,Row5), (2,Row5), (1,Row5)
+//(8,Row6), (7,Row6), (6,Row6), (5,Row6), (4,Row6), (3,Row6), (2,Row6), (1,Row6)
+//(8,Row7), (7,Row7), (6,Row7), (5,Row7), (4,Row7), (3,Row7), (2,Row7), (1,Row7)
+
+char p1State = STATE_3;
+char p2State = STATE_3;
 
 int ballDirX = -1;
 int ballDirY = 1;
 int ballX = 4;
 char ballYState = Row4;
 
-bool readButton0State() {
-    if (PORTBbits.RB0 == 1) { // Buton bas?ld?ysa
-        PORTBbits.RB0 = 0;
-        return true;
-    }
-    return false;
-}
-
-bool readButton1State() {
-    if (PORTBbits.RB1 == 1) { // Buton bas?ld?ysa
-        PORTBbits.RB1 = 0 ;
-        return true;
-    }
-    return false;
-}
-
-bool readButton2State() {
-    if (PORTBbits.RB2 == 1) { // Buton bas?ld?ysa
-        PORTBbits.RB2 = 0;
-        return true;
-    }
-    return false;
-}
-
-bool readButton3State() {
-    if (PORTBbits.RB3 == 1) { // Buton bas?ld?ysa
-        PORTBbits.RB3 = 0 ;
-        return true;
-    }
-    return false;
-}
-
-void initPorts() {
-    TRISB = 0x0F; // init input
-    TRISC = 0x00; //init output
-    MAX7219_init(1);
-    PORTB = 0x00;
-}
+int isScore=0;
 
 void initGame() {
     ballX = 4;
@@ -85,49 +58,146 @@ void initGame() {
     MAX7219_write(ballX, ballYState);
 }
 
-char buttonGoUp(char currentState) {
-    if (currentState & (Row4 | Row5 | Row6 | Row7)) {
-        return currentState;
-    }
-    return currentState << 1;
+
+int readButton0() {
+    return Player1_up_pin;
+}
+int readButton1() {
+    return Player1_down_pin;
+}
+int readButton2() {
+    return Player2_up_pin;
+}
+int readButton3() {
+    return Player2_down_pin;
 }
 
-char buttonGoDown(char currentState) {
-    if (currentState & (Row0 | Row1 | Row2 | Row3)) {
-        return currentState;
-    }
-    return currentState >> 1;
-}
-
-void updatePlayerPosition(int player, int direction) {
-    if (player == 1) {
-        if (direction == 1) { // Yukari
-            p1State = buttonGoUp(p1State);
-            MAX7219_write(8, p1State);
-        } else { // Asag?
-            p1State = buttonGoDown(p1State);
-            MAX7219_write(8, p1State);
+void buttonGoUp(int player) {
+    if (player ==1){
+        switch (p1State){
+            case STATE_1:
+                p1State=STATE_2;
+                MAX7219_write(7, p1State); 
+                break;
+            case STATE_2:
+                p1State=STATE_3;
+                MAX7219_write(7, p1State);
+                break;
+            case STATE_3:
+                p1State=STATE_4;
+                MAX7219_write(7, p1State);                
+                break;
+            case STATE_4:
+                p1State=STATE_5;
+                MAX7219_write(7, p1State); 
+                break;
+            case STATE_5:
+                p1State=STATE_5;
+                MAX7219_write(7, p1State);
+                break;
+            default:
+                p1State =STATE_3;
+                MAX7219_write(7, p1State);
+                break;
         }
-    } else {
-        if (direction == 1) { // Yukari
-            p2State = buttonGoUp(p2State);
-            MAX7219_write(1, p2State);
-        } else { // Asagi
-            p2State = buttonGoDown(p2State);
-            MAX7219_write(1, p2State);
-        }
     }
+    else{
+        switch (p2State){
+            case STATE_1:
+                p2State=STATE_2;
+                MAX7219_write(2, p2State); 
+                break;
+            case STATE_2:
+                p2State=STATE_3;
+                MAX7219_write(2, p2State);
+                break;
+            case STATE_3:
+                p2State=STATE_4;
+                MAX7219_write(2, p2State);                
+                break;
+            case STATE_4:
+                p2State=STATE_5;
+                MAX7219_write(2, p2State); 
+                break;
+            case STATE_5:
+                p2State=STATE_5;
+                MAX7219_write(2, p2State);
+                break;
+            default:
+                p2State = STATE_3;
+                MAX7219_write(2, p2State);
+                break;
+        }
+    }      
 }
 
+void buttonGoDown(int player) {
+    if (player ==1){
+        switch (p1State){
+            case STATE_1:
+                p1State=STATE_1;
+                MAX7219_write(7, p1State); 
+                break;
+            case STATE_2:
+                p1State=STATE_1;
+                MAX7219_write(7, p1State);
+                break;
+            case STATE_3:
+                p1State=STATE_2;
+                MAX7219_write(7, p1State);                
+                break;
+            case STATE_4:
+                p1State=STATE_3;
+                MAX7219_write(7, p1State); 
+                break;
+            case STATE_5:
+                p1State=STATE_4;
+                MAX7219_write(7, p1State);
+                break;
+            default:
+                p1State = STATE_3;
+                MAX7219_write(7, p1State);
+                break;
+        }
+    }
+    else{
+        switch (p2State){
+            case STATE_1:
+                p2State=STATE_1;
+                MAX7219_write(2, p2State); 
+                break;
+            case STATE_2:
+                p2State=STATE_1;
+                MAX7219_write(2, p2State);
+                break;
+            case STATE_3:
+                p2State=STATE_2;
+                MAX7219_write(2, p2State);                
+                break;
+            case STATE_4:
+                p2State=STATE_3;
+                MAX7219_write(2, p2State); 
+                break;
+            case STATE_5:
+                p2State=STATE_4;
+                MAX7219_write(2, p2State);
+                break;
+            default:
+                p2State = Row2 | Row3 | Row4 | Row5;
+                MAX7219_write(2, p2State);
+                break;
+        }
+    } 
+}
 void updateBallPosition() {
     int ballXprev= ballX;
     //Topun column kordinatlar?
-    if (ballX < 1 || ballX > 8) { // S?n?rlar
+    if (ballX ==  || ballX == 8) { // Sinirlar
         ballDirX = -ballDirX;
     }
     ballX += ballDirX;
 
-    if ((ballYState & Row0) || (ballYState & Row7)) { //s?n?rlar
+    if ((ballYState & p1State)!= No_Light || (ballYState & p2State) != No_Light) { //pad kontrol
         ballDirY = -ballDirY;
     }
     ballYState = (ballDirY == 1) ? ballYState << 1 : ballYState >> 1;
@@ -136,35 +206,36 @@ void updateBallPosition() {
     MAX7219_write(ballX, ballYState);
 }
 
+void initGame() {
+    ballX = 4;
+    ballYState = Row4;
+    MAX7219_write(7, p1State);
+    MAX7219_write(2, p2State);
+    MAX7219_write(ballX, ballYState);
+}
+
 int main(int argc, char** argv) {
-    initPorts();
-    initGame();
-
-    while (1) {
-        //if !Finish Game Finished method
-        __delay_ms(10); // Topun h?z?n? ayarlamak için gecikme
-        updateBallPosition();
-
+    TRISB = 0x0F; // init input
+    TRISC = 0; //init output
+    //initGame();
+    MAX7219_init(1);
+    
+    while(1){
+        //update_ball_position
+        //__delay_ms(10);
+        if(readButton0() == 1){
+            buttonGoUp(1);
+        }
+        if(readButton1() == 1){
+            buttonGoDown(1);
+        }
+        if(readButton2() == 1){
+            buttonGoUp(2);
+        }
+        if(readButton3() == 1){
+            buttonGoDown(2);
+        }
         
-        button0pressed = readButton0State();
-        button1pressed = readButton1State();
-        button2pressed = readButton2State();
-        button3pressed = readButton3State();
-
-        // Oyuncu 1
-        if (button0pressed) {
-            updatePlayerPosition(1, 1); // 1 yukari
-        } else if (button1pressed) {
-            updatePlayerPosition(1, 0); // 1 asagi
-        }
-
-        // Oyuncu 2
-        if (button2pressed) {
-            updatePlayerPosition(2, 1); // 2 yukari
-        } else if (button3pressed) {
-            updatePlayerPosition(2, 0); // 2 asagi
-        }
-
     }
 
     return (EXIT_SUCCESS);

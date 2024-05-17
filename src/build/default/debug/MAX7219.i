@@ -1930,7 +1930,7 @@ char SPI_read(void);
 # 18 "./MAX7219_Prototypes.h"
 void MAX7219_init(char noChips);
 void MAX7219_config(char chip);
-void MAX7219_write(char regName,char data);
+void MAX7219_write(char regName, char data);
 void MAX7219_displayText(char* text);
 void MAX7219_NoOperation(void);
 # 5 "./MAX7219.h" 2
@@ -1940,52 +1940,53 @@ void MAX7219_init(char noChips);
 
 void MAX7219_config(char chip);
 
-void MAX7219_write(char regName,char data);
+void MAX7219_write(char regName, char data);
 
 void MAX7219_NoOperation();
 
 void MAX7219_draw_ball(char* ball);
 
-void initPlayersPad();
-void updatePlayerPosition(int player, int direction);
+void initGame();
+void initPorts();
+void updateBallPosition();
+void clearGame();
 # 10 "MAX7219.c" 2
 
-void MAX7219_init(char noChips)
-{
-  SPI_init();
-  while(noChips)
+
+void MAX7219_init(char noChips) {
+    SPI_init();
+    while (noChips)
         MAX7219_config(--noChips);
 }
 
-void MAX7219_config(char chip)
-{
-  MAX7219_write(0x09,0x00);
-  MAX7219_write(0x0A,0x05);
-  MAX7219_write(0x0B,0x07);
-  MAX7219_write(0x0C,0x01);
-  MAX7219_write(0x0F,0x00);
+
+void MAX7219_config(char chip) {
+    MAX7219_write(0x09, 0x00);
+    MAX7219_write(0x0A, 0x05);
+    MAX7219_write(0x0B, 0x07);
+    MAX7219_write(0x0C, 0x01);
+    MAX7219_write(0x0F, 0x00);
 }
 
-void MAX7219_write(char regName,char data)
-{
-  RC1 = 0;
 
-  SPI_write(regName);
-  SPI_write(data);
+void MAX7219_write(char regName, char data) {
+    RC1 = 0;
 
-  RC1 = 1;
+    SPI_write(regName);
+    SPI_write(data);
+
+    RC1 = 1;
 }
 
-void MAX7219_displayText(char* text)
-{
-    for(int col = 1; col < 9; col++)
-    {
-      MAX7219_write( (char)col, text[col]);
+
+void MAX7219_displayText(char* text) {
+    for (int col = 1; col < 9; col++) {
+        MAX7219_write((char) col, text[col]);
     }
 }
 
-void MAX7219_NoOperation()
-{
-  SPI_write(0x00);
-  SPI_write(0x00);
+
+void MAX7219_NoOperation() {
+    SPI_write(0x00);
+    SPI_write(0x00);
 }

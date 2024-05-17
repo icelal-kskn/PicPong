@@ -1,15 +1,20 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"222 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f877a.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f877a.h: 222:     struct {
-[s S14 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S14 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"221
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f877a.h: 221: typedef union {
-[u S13 `S14 1 ]
-[n S13 . . ]
-"233
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f877a.h: 233: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x006)));
-[v _PORTBbits `VS13 ~T0 @X0 0 e@6 ]
+"11 ./MAX7219.h
+[; ;./MAX7219.h: 11: void MAX7219_write(char regName, char data);
+[v _MAX7219_write `(v ~T0 @X0 0 ef2`uc`uc ]
+"2678 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f877a.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f877a.h: 2678: extern volatile __bit RB0 __attribute__((address(0x30)));
+[v _RB0 `Vb ~T0 @X0 0 e@48 ]
+"2681
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f877a.h: 2681: extern volatile __bit RB1 __attribute__((address(0x31)));
+[v _RB1 `Vb ~T0 @X0 0 e@49 ]
+"2684
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f877a.h: 2684: extern volatile __bit RB2 __attribute__((address(0x32)));
+[v _RB2 `Vb ~T0 @X0 0 e@50 ]
+"2687
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f877a.h: 2687: extern volatile __bit RB3 __attribute__((address(0x33)));
+[v _RB3 `Vb ~T0 @X0 0 e@51 ]
+[p mainexit ]
 "1375
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f877a.h: 1375: extern volatile unsigned char TRISB __attribute__((address(0x086)));
 [v _TRISB `Vuc ~T0 @X0 0 e@134 ]
@@ -19,17 +24,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7 ./MAX7219.h
 [; ;./MAX7219.h: 7: void MAX7219_init(char noChips);
 [v _MAX7219_init `(v ~T0 @X0 0 ef1`uc ]
-"216 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f877a.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f877a.h: 216: extern volatile unsigned char PORTB __attribute__((address(0x006)));
-[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"11 ./MAX7219.h
-[; ;./MAX7219.h: 11: void MAX7219_write(char regName,char data);
-[v _MAX7219_write `(v ~T0 @X0 0 ef2`uc`uc ]
-[p mainexit ]
-[v F485 `(v ~T0 @X0 1 tf1`ul ]
-"20 C:\Program Files\Microchip\xc8\v2.46\pic\include\builtins.h
-[v __delay `JF485 ~T0 @X0 0 e ]
-[p i __delay ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f877a.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f877a.h: 54: __asm("INDF equ 00h");
 [; <" INDF equ 00h ;# ">
@@ -210,501 +204,621 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2363
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC16Fxxx_DFP/1.6.156/xc8\pic\include\proc\pic16f877a.h: 2363: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"28 main.c
-[; ;main.c: 28: _Bool button0pressed = 0;
-[v _button0pressed `a ~T0 @X0 1 e ]
-[i _button0pressed
--> -> 0 `i `a
-]
-"29
-[; ;main.c: 29: _Bool button1pressed = 0;
-[v _button1pressed `a ~T0 @X0 1 e ]
-[i _button1pressed
--> -> 0 `i `a
-]
-"30
-[; ;main.c: 30: _Bool button2pressed = 0;
-[v _button2pressed `a ~T0 @X0 1 e ]
-[i _button2pressed
--> -> 0 `i `a
-]
-"31
-[; ;main.c: 31: _Bool button3pressed = 0;
-[v _button3pressed `a ~T0 @X0 1 e ]
-[i _button3pressed
--> -> 0 `i `a
-]
-"33
-[; ;main.c: 33: char p1State = 0b00000010 | 0b00000100 | 0b00001000 | 0b00010000;
+"43 main.c
+[; ;main.c: 43: char p1State = 0b00011110;
 [v _p1State `uc ~T0 @X0 1 e ]
 [i _p1State
--> | | | -> 2 `i -> 4 `i -> 8 `i -> 16 `i `uc
+-> -> 30 `i `uc
 ]
-"34
-[; ;main.c: 34: char p2State = 0b00000010 | 0b00000100 | 0b00001000 | 0b00010000;
+"44
+[; ;main.c: 44: char p2State = 0b00011110;
 [v _p2State `uc ~T0 @X0 1 e ]
 [i _p2State
--> | | | -> 2 `i -> 4 `i -> 8 `i -> 16 `i `uc
+-> -> 30 `i `uc
 ]
-"36
-[; ;main.c: 36: int ballDirX = -1;
+"46
+[; ;main.c: 46: int ballDirX = -1;
 [v _ballDirX `i ~T0 @X0 1 e ]
 [i _ballDirX
 -U -> 1 `i
 ]
-"37
-[; ;main.c: 37: int ballDirY = 1;
+"47
+[; ;main.c: 47: int ballDirY = 1;
 [v _ballDirY `i ~T0 @X0 1 e ]
 [i _ballDirY
 -> 1 `i
 ]
-"38
-[; ;main.c: 38: int ballX = 4;
+"48
+[; ;main.c: 48: int ballX = 4;
 [v _ballX `i ~T0 @X0 1 e ]
 [i _ballX
 -> 4 `i
 ]
-"39
-[; ;main.c: 39: char ballYState = 0b00001000;
+"49
+[; ;main.c: 49: char ballYState = 0b00001000;
 [v _ballYState `uc ~T0 @X0 1 e ]
 [i _ballYState
 -> -> 8 `i `uc
 ]
-"41
-[; ;main.c: 41: _Bool readButton0State() {
-[v _readButton0State `(a ~T0 @X0 1 ef ]
-{
-[e :U _readButton0State ]
-[f ]
-"42
-[; ;main.c: 42:     if (PORTBbits.RB0 == 1) {
-[e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 102  ]
-{
-"43
-[; ;main.c: 43:         PORTBbits.RB0 = 0;
-[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
-"44
-[; ;main.c: 44:         return 1;
-[e ) -> -> 1 `i `a ]
-[e $UE 101  ]
-"45
-[; ;main.c: 45:     }
-}
-[e :U 102 ]
-"46
-[; ;main.c: 46:     return 0;
-[e ) -> -> 0 `i `a ]
-[e $UE 101  ]
-"47
-[; ;main.c: 47: }
-[e :UE 101 ]
-}
-"49
-[; ;main.c: 49: _Bool readButton1State() {
-[v _readButton1State `(a ~T0 @X0 1 ef ]
-{
-[e :U _readButton1State ]
-[f ]
-"50
-[; ;main.c: 50:     if (PORTBbits.RB1 == 1) {
-[e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 104  ]
-{
 "51
-[; ;main.c: 51:         PORTBbits.RB1 = 0 ;
-[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
-"52
-[; ;main.c: 52:         return 1;
-[e ) -> -> 1 `i `a ]
-[e $UE 103  ]
-"53
-[; ;main.c: 53:     }
-}
-[e :U 104 ]
-"54
-[; ;main.c: 54:     return 0;
-[e ) -> -> 0 `i `a ]
-[e $UE 103  ]
-"55
-[; ;main.c: 55: }
-[e :UE 103 ]
-}
-"57
-[; ;main.c: 57: _Bool readButton2State() {
-[v _readButton2State `(a ~T0 @X0 1 ef ]
-{
-[e :U _readButton2State ]
-[f ]
-"58
-[; ;main.c: 58:     if (PORTBbits.RB2 == 1) {
-[e $ ! == -> . . _PORTBbits 0 2 `i -> 1 `i 106  ]
-{
-"59
-[; ;main.c: 59:         PORTBbits.RB2 = 0;
-[e = . . _PORTBbits 0 2 -> -> 0 `i `uc ]
-"60
-[; ;main.c: 60:         return 1;
-[e ) -> -> 1 `i `a ]
-[e $UE 105  ]
-"61
-[; ;main.c: 61:     }
-}
-[e :U 106 ]
-"62
-[; ;main.c: 62:     return 0;
-[e ) -> -> 0 `i `a ]
-[e $UE 105  ]
-"63
-[; ;main.c: 63: }
-[e :UE 105 ]
-}
-"65
-[; ;main.c: 65: _Bool readButton3State() {
-[v _readButton3State `(a ~T0 @X0 1 ef ]
-{
-[e :U _readButton3State ]
-[f ]
-"66
-[; ;main.c: 66:     if (PORTBbits.RB3 == 1) {
-[e $ ! == -> . . _PORTBbits 0 3 `i -> 1 `i 108  ]
-{
-"67
-[; ;main.c: 67:         PORTBbits.RB3 = 0 ;
-[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
-"68
-[; ;main.c: 68:         return 1;
-[e ) -> -> 1 `i `a ]
-[e $UE 107  ]
-"69
-[; ;main.c: 69:     }
-}
-[e :U 108 ]
-"70
-[; ;main.c: 70:     return 0;
-[e ) -> -> 0 `i `a ]
-[e $UE 107  ]
-"71
-[; ;main.c: 71: }
-[e :UE 107 ]
-}
-"73
-[; ;main.c: 73: void initPorts() {
-[v _initPorts `(v ~T0 @X0 1 ef ]
-{
-[e :U _initPorts ]
-[f ]
-"74
-[; ;main.c: 74:     TRISB = 0x0F;
-[e = _TRISB -> -> 15 `i `uc ]
-"75
-[; ;main.c: 75:     TRISC = 0x00;
-[e = _TRISC -> -> 0 `i `uc ]
-"76
-[; ;main.c: 76:     MAX7219_init(1);
-[e ( _MAX7219_init (1 -> -> 1 `i `uc ]
-"77
-[; ;main.c: 77:     PORTB = 0x00;
-[e = _PORTB -> -> 0 `i `uc ]
-"78
-[; ;main.c: 78: }
-[e :UE 109 ]
-}
-"80
-[; ;main.c: 80: void initGame() {
+[; ;main.c: 51: void initGame() {
 [v _initGame `(v ~T0 @X0 1 ef ]
 {
 [e :U _initGame ]
 [f ]
-"81
-[; ;main.c: 81:     ballX = 4;
+"52
+[; ;main.c: 52:     ballX = 4;
 [e = _ballX -> 4 `i ]
-"82
-[; ;main.c: 82:     ballYState = 0b00001000;
+"53
+[; ;main.c: 53:     ballYState = 0b00001000;
 [e = _ballYState -> -> 8 `i `uc ]
-"83
-[; ;main.c: 83:     MAX7219_write(8, p1State);
+"54
+[; ;main.c: 54:     MAX7219_write(8, p1State);
 [e ( _MAX7219_write (2 , -> -> 8 `i `uc _p1State ]
-"84
-[; ;main.c: 84:     MAX7219_write(1, p2State);
+"55
+[; ;main.c: 55:     MAX7219_write(1, p2State);
 [e ( _MAX7219_write (2 , -> -> 1 `i `uc _p2State ]
-"85
-[; ;main.c: 85:     MAX7219_write(ballX, ballYState);
+"56
+[; ;main.c: 56:     MAX7219_write(ballX, ballYState);
 [e ( _MAX7219_write (2 , -> _ballX `uc _ballYState ]
-"86
-[; ;main.c: 86: }
-[e :UE 110 ]
+"57
+[; ;main.c: 57: }
+[e :UE 101 ]
 }
-"88
-[; ;main.c: 88: char buttonGoUp(char currentState) {
-[v _buttonGoUp `(uc ~T0 @X0 1 ef1`uc ]
+"60
+[; ;main.c: 60: int readButton0() {
+[v _readButton0 `(i ~T0 @X0 1 ef ]
+{
+[e :U _readButton0 ]
+[f ]
+"61
+[; ;main.c: 61:     return RB0;
+[e ) -> _RB0 `i ]
+[e $UE 102  ]
+"62
+[; ;main.c: 62: }
+[e :UE 102 ]
+}
+"63
+[; ;main.c: 63: int readButton1() {
+[v _readButton1 `(i ~T0 @X0 1 ef ]
+{
+[e :U _readButton1 ]
+[f ]
+"64
+[; ;main.c: 64:     return RB1;
+[e ) -> _RB1 `i ]
+[e $UE 103  ]
+"65
+[; ;main.c: 65: }
+[e :UE 103 ]
+}
+"66
+[; ;main.c: 66: int readButton2() {
+[v _readButton2 `(i ~T0 @X0 1 ef ]
+{
+[e :U _readButton2 ]
+[f ]
+"67
+[; ;main.c: 67:     return RB2;
+[e ) -> _RB2 `i ]
+[e $UE 104  ]
+"68
+[; ;main.c: 68: }
+[e :UE 104 ]
+}
+"69
+[; ;main.c: 69: int readButton3() {
+[v _readButton3 `(i ~T0 @X0 1 ef ]
+{
+[e :U _readButton3 ]
+[f ]
+"70
+[; ;main.c: 70:     return RB3;
+[e ) -> _RB3 `i ]
+[e $UE 105  ]
+"71
+[; ;main.c: 71: }
+[e :UE 105 ]
+}
+"73
+[; ;main.c: 73: void buttonGoUp(int player) {
+[v _buttonGoUp `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _buttonGoUp ]
-[v _currentState `uc ~T0 @X0 1 r1 ]
-[f ]
-"89
-[; ;main.c: 89:     if (currentState & (0b00001000 | 0b00010000 | 0b00100000 | 0b01000000)) {
-[e $ ! != & -> _currentState `i | | | -> 8 `i -> 16 `i -> 32 `i -> 64 `i -> 0 `i 112  ]
-{
-"90
-[; ;main.c: 90:         return currentState;
-[e ) _currentState ]
-[e $UE 111  ]
-"91
-[; ;main.c: 91:     }
-}
-[e :U 112 ]
-"92
-[; ;main.c: 92:     return currentState << 1;
-[e ) -> << -> _currentState `i -> 1 `i `uc ]
-[e $UE 111  ]
-"93
-[; ;main.c: 93: }
-[e :UE 111 ]
-}
-"95
-[; ;main.c: 95: char buttonGoDown(char currentState) {
-[v _buttonGoDown `(uc ~T0 @X0 1 ef1`uc ]
-{
-[e :U _buttonGoDown ]
-[v _currentState `uc ~T0 @X0 1 r1 ]
-[f ]
-"96
-[; ;main.c: 96:     if (currentState & (0b10000000 | 0b00000001 | 0b00000010 | 0b00000100)) {
-[e $ ! != & -> _currentState `i | | | -> 128 `i -> 1 `i -> 2 `i -> 4 `i -> 0 `i 114  ]
-{
-"97
-[; ;main.c: 97:         return currentState;
-[e ) _currentState ]
-[e $UE 113  ]
-"98
-[; ;main.c: 98:     }
-}
-[e :U 114 ]
-"99
-[; ;main.c: 99:     return currentState >> 1;
-[e ) -> >> -> _currentState `i -> 1 `i `uc ]
-[e $UE 113  ]
-"100
-[; ;main.c: 100: }
-[e :UE 113 ]
-}
-"102
-[; ;main.c: 102: void updatePlayerPosition(int player, int direction) {
-[v _updatePlayerPosition `(v ~T0 @X0 1 ef2`i`i ]
-{
-[e :U _updatePlayerPosition ]
 [v _player `i ~T0 @X0 1 r1 ]
-[v _direction `i ~T0 @X0 1 r2 ]
 [f ]
+"74
+[; ;main.c: 74:     if (player ==1){
+[e $ ! == _player -> 1 `i 107  ]
+{
+"75
+[; ;main.c: 75:         switch (p1State){
+[e $U 109  ]
+{
+"76
+[; ;main.c: 76:             case 0b10000111:
+[e :U 110 ]
+"77
+[; ;main.c: 77:                 p1State=0b00001111;
+[e = _p1State -> -> 15 `i `uc ]
+"78
+[; ;main.c: 78:                 MAX7219_write(7, p1State);
+[e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
+"79
+[; ;main.c: 79:                 break;
+[e $U 108  ]
+"80
+[; ;main.c: 80:             case 0b00001111:
+[e :U 111 ]
+"81
+[; ;main.c: 81:                 p1State=0b00011110;
+[e = _p1State -> -> 30 `i `uc ]
+"82
+[; ;main.c: 82:                 MAX7219_write(7, p1State);
+[e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
+"83
+[; ;main.c: 83:                 break;
+[e $U 108  ]
+"84
+[; ;main.c: 84:             case 0b00011110:
+[e :U 112 ]
+"85
+[; ;main.c: 85:                 p1State=0b00111100;
+[e = _p1State -> -> 60 `i `uc ]
+"86
+[; ;main.c: 86:                 MAX7219_write(7, p1State);
+[e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
+"87
+[; ;main.c: 87:                 break;
+[e $U 108  ]
+"88
+[; ;main.c: 88:             case 0b00111100:
+[e :U 113 ]
+"89
+[; ;main.c: 89:                 p1State=0b01111000;
+[e = _p1State -> -> 120 `i `uc ]
+"90
+[; ;main.c: 90:                 MAX7219_write(7, p1State);
+[e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
+"91
+[; ;main.c: 91:                 break;
+[e $U 108  ]
+"92
+[; ;main.c: 92:             case 0b01111000:
+[e :U 114 ]
+"93
+[; ;main.c: 93:                 p1State=0b01111000;
+[e = _p1State -> -> 120 `i `uc ]
+"94
+[; ;main.c: 94:                 MAX7219_write(7, p1State);
+[e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
+"95
+[; ;main.c: 95:                 break;
+[e $U 108  ]
+"96
+[; ;main.c: 96:             default:
+[e :U 115 ]
+"97
+[; ;main.c: 97:                 p1State =0b00011110;
+[e = _p1State -> -> 30 `i `uc ]
+"98
+[; ;main.c: 98:                 MAX7219_write(7, p1State);
+[e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
+"99
+[; ;main.c: 99:                 break;
+[e $U 108  ]
+"100
+[; ;main.c: 100:         }
+}
+[e $U 108  ]
+[e :U 109 ]
+[e [\ _p1State , $ -> 135 `i 110
+ , $ -> 15 `i 111
+ , $ -> 30 `i 112
+ , $ -> 60 `i 113
+ , $ -> 120 `i 114
+ 115 ]
+[e :U 108 ]
+"101
+[; ;main.c: 101:     }
+}
+[e $U 116  ]
+"102
+[; ;main.c: 102:     else{
+[e :U 107 ]
+{
 "103
-[; ;main.c: 103:     if (player == 1) {
-[e $ ! == _player -> 1 `i 116  ]
+[; ;main.c: 103:         switch (p2State){
+[e $U 118  ]
 {
 "104
-[; ;main.c: 104:         if (direction == 1) {
-[e $ ! == _direction -> 1 `i 117  ]
-{
-"105
-[; ;main.c: 105:             p1State = buttonGoUp(p1State);
-[e = _p1State ( _buttonGoUp (1 _p1State ]
-"106
-[; ;main.c: 106:             MAX7219_write(8, p1State);
-[e ( _MAX7219_write (2 , -> -> 8 `i `uc _p1State ]
-"107
-[; ;main.c: 107:         } else {
-}
-[e $U 118  ]
-[e :U 117 ]
-{
-"108
-[; ;main.c: 108:             p1State = buttonGoDown(p1State);
-[e = _p1State ( _buttonGoDown (1 _p1State ]
-"109
-[; ;main.c: 109:             MAX7219_write(8, p1State);
-[e ( _MAX7219_write (2 , -> -> 8 `i `uc _p1State ]
-"110
-[; ;main.c: 110:         }
-}
-[e :U 118 ]
-"111
-[; ;main.c: 111:     } else {
-}
-[e $U 119  ]
-[e :U 116 ]
-{
-"112
-[; ;main.c: 112:         if (direction == 1) {
-[e $ ! == _direction -> 1 `i 120  ]
-{
-"113
-[; ;main.c: 113:             p2State = buttonGoUp(p2State);
-[e = _p2State ( _buttonGoUp (1 _p2State ]
-"114
-[; ;main.c: 114:             MAX7219_write(1, p2State);
-[e ( _MAX7219_write (2 , -> -> 1 `i `uc _p2State ]
-"115
-[; ;main.c: 115:         } else {
-}
-[e $U 121  ]
-[e :U 120 ]
-{
-"116
-[; ;main.c: 116:             p2State = buttonGoDown(p2State);
-[e = _p2State ( _buttonGoDown (1 _p2State ]
-"117
-[; ;main.c: 117:             MAX7219_write(1, p2State);
-[e ( _MAX7219_write (2 , -> -> 1 `i `uc _p2State ]
-"118
-[; ;main.c: 118:         }
-}
-[e :U 121 ]
-"119
-[; ;main.c: 119:     }
-}
+[; ;main.c: 104:             case 0b10000111:
 [e :U 119 ]
+"105
+[; ;main.c: 105:                 p2State=0b00001111;
+[e = _p2State -> -> 15 `i `uc ]
+"106
+[; ;main.c: 106:                 MAX7219_write(2, p2State);
+[e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
+"107
+[; ;main.c: 107:                 break;
+[e $U 117  ]
+"108
+[; ;main.c: 108:             case 0b00001111:
+[e :U 120 ]
+"109
+[; ;main.c: 109:                 p2State=0b00011110;
+[e = _p2State -> -> 30 `i `uc ]
+"110
+[; ;main.c: 110:                 MAX7219_write(2, p2State);
+[e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
+"111
+[; ;main.c: 111:                 break;
+[e $U 117  ]
+"112
+[; ;main.c: 112:             case 0b00011110:
+[e :U 121 ]
+"113
+[; ;main.c: 113:                 p2State=0b00111100;
+[e = _p2State -> -> 60 `i `uc ]
+"114
+[; ;main.c: 114:                 MAX7219_write(2, p2State);
+[e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
+"115
+[; ;main.c: 115:                 break;
+[e $U 117  ]
+"116
+[; ;main.c: 116:             case 0b00111100:
+[e :U 122 ]
+"117
+[; ;main.c: 117:                 p2State=0b01111000;
+[e = _p2State -> -> 120 `i `uc ]
+"118
+[; ;main.c: 118:                 MAX7219_write(2, p2State);
+[e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
+"119
+[; ;main.c: 119:                 break;
+[e $U 117  ]
 "120
-[; ;main.c: 120: }
-[e :UE 115 ]
-}
-"122
-[; ;main.c: 122: void updateBallPosition() {
-[v _updateBallPosition `(v ~T0 @X0 1 ef ]
-{
-[e :U _updateBallPosition ]
-[f ]
-"123
-[; ;main.c: 123:     int ballXprev= ballX;
-[v _ballXprev `i ~T0 @X0 1 a ]
-[e = _ballXprev _ballX ]
-"125
-[; ;main.c: 125:     if (ballX < 1 || ballX > 8) {
-[e $ ! || < _ballX -> 1 `i > _ballX -> 8 `i 123  ]
-{
-"126
-[; ;main.c: 126:         ballDirX = -ballDirX;
-[e = _ballDirX -U _ballDirX ]
-"127
-[; ;main.c: 127:     }
-}
+[; ;main.c: 120:             case 0b01111000:
 [e :U 123 ]
-"128
-[; ;main.c: 128:     ballX += ballDirX;
-[e =+ _ballX _ballDirX ]
-"130
-[; ;main.c: 130:     if ((ballYState & 0b10000000) || (ballYState & 0b01000000)) {
-[e $ ! || != & -> _ballYState `i -> 128 `i -> 0 `i != & -> _ballYState `i -> 64 `i -> 0 `i 124  ]
-{
-"131
-[; ;main.c: 131:         ballDirY = -ballDirY;
-[e = _ballDirY -U _ballDirY ]
-"132
-[; ;main.c: 132:     }
-}
+"121
+[; ;main.c: 121:                 p2State=0b01111000;
+[e = _p2State -> -> 120 `i `uc ]
+"122
+[; ;main.c: 122:                 MAX7219_write(2, p2State);
+[e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
+"123
+[; ;main.c: 123:                 break;
+[e $U 117  ]
+"124
+[; ;main.c: 124:             default:
 [e :U 124 ]
+"125
+[; ;main.c: 125:                 p2State = 0b00011110;
+[e = _p2State -> -> 30 `i `uc ]
+"126
+[; ;main.c: 126:                 MAX7219_write(2, p2State);
+[e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
+"127
+[; ;main.c: 127:                 break;
+[e $U 117  ]
+"128
+[; ;main.c: 128:         }
+}
+[e $U 117  ]
+[e :U 118 ]
+[e [\ _p2State , $ -> 135 `i 119
+ , $ -> 15 `i 120
+ , $ -> 30 `i 121
+ , $ -> 60 `i 122
+ , $ -> 120 `i 123
+ 124 ]
+[e :U 117 ]
+"129
+[; ;main.c: 129:     }
+}
+[e :U 116 ]
+"130
+[; ;main.c: 130: }
+[e :UE 106 ]
+}
+"132
+[; ;main.c: 132: void buttonGoDown(int player) {
+[v _buttonGoDown `(v ~T0 @X0 1 ef1`i ]
+{
+[e :U _buttonGoDown ]
+[v _player `i ~T0 @X0 1 r1 ]
+[f ]
 "133
-[; ;main.c: 133:     ballYState = (ballDirY == 1) ? ballYState << 1 : ballYState >> 1;
-[e = _ballYState -> ? == _ballDirY -> 1 `i : << -> _ballYState `i -> 1 `i >> -> _ballYState `i -> 1 `i `uc ]
+[; ;main.c: 133:     if (player ==1){
+[e $ ! == _player -> 1 `i 126  ]
+{
+"134
+[; ;main.c: 134:         switch (p1State){
+[e $U 128  ]
+{
 "135
-[; ;main.c: 135:     MAX7219_write(ballXprev, 0b00000000);
-[e ( _MAX7219_write (2 , -> _ballXprev `uc -> -> 0 `i `uc ]
+[; ;main.c: 135:             case 0b10000111:
+[e :U 129 ]
 "136
-[; ;main.c: 136:     MAX7219_write(ballX, ballYState);
-[e ( _MAX7219_write (2 , -> _ballX `uc _ballYState ]
+[; ;main.c: 136:                 p1State=0b10000111;
+[e = _p1State -> -> 135 `i `uc ]
 "137
-[; ;main.c: 137: }
-[e :UE 122 ]
+[; ;main.c: 137:                 MAX7219_write(7, p1State);
+[e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
+"138
+[; ;main.c: 138:                 break;
+[e $U 127  ]
+"139
+[; ;main.c: 139:             case 0b00001111:
+[e :U 130 ]
+"140
+[; ;main.c: 140:                 p1State=0b10000111;
+[e = _p1State -> -> 135 `i `uc ]
+"141
+[; ;main.c: 141:                 MAX7219_write(7, p1State);
+[e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
+"142
+[; ;main.c: 142:                 break;
+[e $U 127  ]
+"143
+[; ;main.c: 143:             case 0b00011110:
+[e :U 131 ]
+"144
+[; ;main.c: 144:                 p1State=0b00001111;
+[e = _p1State -> -> 15 `i `uc ]
+"145
+[; ;main.c: 145:                 MAX7219_write(7, p1State);
+[e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
+"146
+[; ;main.c: 146:                 break;
+[e $U 127  ]
+"147
+[; ;main.c: 147:             case 0b00111100:
+[e :U 132 ]
+"148
+[; ;main.c: 148:                 p1State=0b00011110;
+[e = _p1State -> -> 30 `i `uc ]
+"149
+[; ;main.c: 149:                 MAX7219_write(7, p1State);
+[e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
+"150
+[; ;main.c: 150:                 break;
+[e $U 127  ]
+"151
+[; ;main.c: 151:             case 0b01111000:
+[e :U 133 ]
+"152
+[; ;main.c: 152:                 p1State=0b00111100;
+[e = _p1State -> -> 60 `i `uc ]
+"153
+[; ;main.c: 153:                 MAX7219_write(7, p1State);
+[e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
+"154
+[; ;main.c: 154:                 break;
+[e $U 127  ]
+"155
+[; ;main.c: 155:             default:
+[e :U 134 ]
+"156
+[; ;main.c: 156:                 p1State = 0b00011110;
+[e = _p1State -> -> 30 `i `uc ]
+"157
+[; ;main.c: 157:                 MAX7219_write(7, p1State);
+[e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
+"158
+[; ;main.c: 158:                 break;
+[e $U 127  ]
+"159
+[; ;main.c: 159:         }
+}
+[e $U 127  ]
+[e :U 128 ]
+[e [\ _p1State , $ -> 135 `i 129
+ , $ -> 15 `i 130
+ , $ -> 30 `i 131
+ , $ -> 60 `i 132
+ , $ -> 120 `i 133
+ 134 ]
+[e :U 127 ]
+"160
+[; ;main.c: 160:     }
+}
+[e $U 135  ]
+"161
+[; ;main.c: 161:     else{
+[e :U 126 ]
+{
+"162
+[; ;main.c: 162:         switch (p2State){
+[e $U 137  ]
+{
+"163
+[; ;main.c: 163:             case 0b10000111:
+[e :U 138 ]
+"164
+[; ;main.c: 164:                 p2State=0b10000111;
+[e = _p2State -> -> 135 `i `uc ]
+"165
+[; ;main.c: 165:                 MAX7219_write(2, p2State);
+[e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
+"166
+[; ;main.c: 166:                 break;
+[e $U 136  ]
+"167
+[; ;main.c: 167:             case 0b00001111:
+[e :U 139 ]
+"168
+[; ;main.c: 168:                 p2State=0b10000111;
+[e = _p2State -> -> 135 `i `uc ]
+"169
+[; ;main.c: 169:                 MAX7219_write(2, p2State);
+[e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
+"170
+[; ;main.c: 170:                 break;
+[e $U 136  ]
+"171
+[; ;main.c: 171:             case 0b00011110:
+[e :U 140 ]
+"172
+[; ;main.c: 172:                 p2State=0b00001111;
+[e = _p2State -> -> 15 `i `uc ]
+"173
+[; ;main.c: 173:                 MAX7219_write(2, p2State);
+[e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
+"174
+[; ;main.c: 174:                 break;
+[e $U 136  ]
+"175
+[; ;main.c: 175:             case 0b00111100:
+[e :U 141 ]
+"176
+[; ;main.c: 176:                 p2State=0b00011110;
+[e = _p2State -> -> 30 `i `uc ]
+"177
+[; ;main.c: 177:                 MAX7219_write(2, p2State);
+[e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
+"178
+[; ;main.c: 178:                 break;
+[e $U 136  ]
+"179
+[; ;main.c: 179:             case 0b01111000:
+[e :U 142 ]
+"180
+[; ;main.c: 180:                 p2State=0b00111100;
+[e = _p2State -> -> 60 `i `uc ]
+"181
+[; ;main.c: 181:                 MAX7219_write(2, p2State);
+[e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
+"182
+[; ;main.c: 182:                 break;
+[e $U 136  ]
+"183
+[; ;main.c: 183:             default:
+[e :U 143 ]
+"184
+[; ;main.c: 184:                 p2State = 0b00000010 | 0b00000100 | 0b00001000 | 0b00010000;
+[e = _p2State -> | | | -> 2 `i -> 4 `i -> 8 `i -> 16 `i `uc ]
+"185
+[; ;main.c: 185:                 MAX7219_write(2, p2State);
+[e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
+"186
+[; ;main.c: 186:                 break;
+[e $U 136  ]
+"187
+[; ;main.c: 187:         }
+}
+[e $U 136  ]
+[e :U 137 ]
+[e [\ _p2State , $ -> 135 `i 138
+ , $ -> 15 `i 139
+ , $ -> 30 `i 140
+ , $ -> 60 `i 141
+ , $ -> 120 `i 142
+ 143 ]
+[e :U 136 ]
+"188
+[; ;main.c: 188:     }
+}
+[e :U 135 ]
+"189
+[; ;main.c: 189: }
+[e :UE 125 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"139
-[; ;main.c: 139: int main(int argc, char** argv) {
+"191
+[; ;main.c: 191: int main(int argc, char** argv) {
 [v _main `(i ~T0 @X0 1 ef2`i`**uc ]
 {
 [e :U _main ]
 [v _argc `i ~T0 @X0 1 r1 ]
 [v _argv `**uc ~T0 @X0 1 r2 ]
 [f ]
-"140
-[; ;main.c: 140:     initPorts();
-[e ( _initPorts ..  ]
-"141
-[; ;main.c: 141:     initGame();
-[e ( _initGame ..  ]
-"143
-[; ;main.c: 143:     while (1) {
-[e :U 127 ]
+"192
+[; ;main.c: 192:     TRISB = 0x0F;
+[e = _TRISB -> -> 15 `i `uc ]
+"193
+[; ;main.c: 193:     TRISC = 0;
+[e = _TRISC -> -> 0 `i `uc ]
+"194
+[; ;main.c: 194:     MAX7219_init(1);
+[e ( _MAX7219_init (1 -> -> 1 `i `uc ]
+"195
+[; ;main.c: 195:     MAX7219_write(1, 0b10000111);
+[e ( _MAX7219_write (2 , -> -> 1 `i `uc -> -> 135 `i `uc ]
+"196
+[; ;main.c: 196:     MAX7219_write(2, 0b00001111);
+[e ( _MAX7219_write (2 , -> -> 2 `i `uc -> -> 15 `i `uc ]
+"197
+[; ;main.c: 197:     MAX7219_write(3, 0b00011110);
+[e ( _MAX7219_write (2 , -> -> 3 `i `uc -> -> 30 `i `uc ]
+"198
+[; ;main.c: 198:     MAX7219_write(4, 0b00111100);
+[e ( _MAX7219_write (2 , -> -> 4 `i `uc -> -> 60 `i `uc ]
+"199
+[; ;main.c: 199:     MAX7219_write(5, 0b01111000);
+[e ( _MAX7219_write (2 , -> -> 5 `i `uc -> -> 120 `i `uc ]
+"200
+[; ;main.c: 200:     while(1){
+[e :U 146 ]
 {
-"145
-[; ;main.c: 145:         _delay((unsigned long)((10)*(800000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 800000000 `l `d .4000.0 `ul ]
-"146
-[; ;main.c: 146:         button0pressed = readButton0State();
-[e = _button0pressed ( _readButton0State ..  ]
-"147
-[; ;main.c: 147:         button1pressed = readButton1State();
-[e = _button1pressed ( _readButton1State ..  ]
-"148
-[; ;main.c: 148:         button2pressed = readButton2State();
-[e = _button2pressed ( _readButton2State ..  ]
-"149
-[; ;main.c: 149:         button3pressed = readButton3State();
-[e = _button3pressed ( _readButton3State ..  ]
-"152
-[; ;main.c: 152:         if (button0pressed) {
-[e $ ! != -> _button0pressed `i -> 0 `i 129  ]
+"202
+[; ;main.c: 202:         if(readButton0() == 1){
+[e $ ! == ( _readButton0 ..  -> 1 `i 148  ]
 {
-"153
-[; ;main.c: 153:             updatePlayerPosition(1, 1);
-[e ( _updatePlayerPosition (2 , -> 1 `i -> 1 `i ]
-"154
-[; ;main.c: 154:         } else if (button1pressed) {
+"203
+[; ;main.c: 203:             buttonGoUp(1);
+[e ( _buttonGoUp (1 -> 1 `i ]
+"204
+[; ;main.c: 204:         }
 }
-[e $U 130  ]
-[e :U 129 ]
-[e $ ! != -> _button1pressed `i -> 0 `i 131  ]
+[e :U 148 ]
+"205
+[; ;main.c: 205:         if(readButton1() == 1){
+[e $ ! == ( _readButton1 ..  -> 1 `i 149  ]
 {
-"155
-[; ;main.c: 155:             updatePlayerPosition(1, 0);
-[e ( _updatePlayerPosition (2 , -> 1 `i -> 0 `i ]
-"156
-[; ;main.c: 156:         }
+"206
+[; ;main.c: 206:             buttonGoDown(1);
+[e ( _buttonGoDown (1 -> 1 `i ]
+"207
+[; ;main.c: 207:         }
 }
-[e :U 131 ]
-[e :U 130 ]
-"159
-[; ;main.c: 159:         if (button2pressed) {
-[e $ ! != -> _button2pressed `i -> 0 `i 132  ]
+[e :U 149 ]
+"208
+[; ;main.c: 208:         if(readButton2() == 1){
+[e $ ! == ( _readButton2 ..  -> 1 `i 150  ]
 {
-"160
-[; ;main.c: 160:             updatePlayerPosition(2, 1);
-[e ( _updatePlayerPosition (2 , -> 2 `i -> 1 `i ]
-"161
-[; ;main.c: 161:         } else if (button3pressed) {
+"209
+[; ;main.c: 209:             buttonGoUp(2);
+[e ( _buttonGoUp (1 -> 2 `i ]
+"210
+[; ;main.c: 210:         }
 }
-[e $U 133  ]
-[e :U 132 ]
-[e $ ! != -> _button3pressed `i -> 0 `i 134  ]
+[e :U 150 ]
+"211
+[; ;main.c: 211:         if(readButton3() == 1){
+[e $ ! == ( _readButton3 ..  -> 1 `i 151  ]
 {
-"162
-[; ;main.c: 162:             updatePlayerPosition(2, 0);
-[e ( _updatePlayerPosition (2 , -> 2 `i -> 0 `i ]
-"163
-[; ;main.c: 163:         }
+"212
+[; ;main.c: 212:             buttonGoDown(2);
+[e ( _buttonGoDown (1 -> 2 `i ]
+"213
+[; ;main.c: 213:         }
 }
-[e :U 134 ]
-[e :U 133 ]
-"164
-[; ;main.c: 164:         updateBallPosition();
-[e ( _updateBallPosition ..  ]
-"165
-[; ;main.c: 165:     }
+[e :U 151 ]
+"215
+[; ;main.c: 215:     }
 }
-[e :U 126 ]
-[e $U 127  ]
-[e :U 128 ]
-"167
-[; ;main.c: 167:     return (0);
+[e :U 145 ]
+[e $U 146  ]
+[e :U 147 ]
+"217
+[; ;main.c: 217:     return (0);
 [e ) -> 0 `i ]
-[e $UE 125  ]
-"168
-[; ;main.c: 168: }
-[e :UE 125 ]
+[e $UE 144  ]
+"218
+[; ;main.c: 218: }
+[e :UE 144 ]
 }

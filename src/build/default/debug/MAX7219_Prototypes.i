@@ -1911,7 +1911,7 @@ extern __bank0 __bit __timeout;
 # 18 "./MAX7219_Prototypes.h"
 void MAX7219_init(char noChips);
 void MAX7219_config(char chip);
-void MAX7219_write(char regName,char data);
+void MAX7219_write(char regName, char data);
 void MAX7219_displayText(char* text);
 void MAX7219_NoOperation(void);
 # 10 "MAX7219_Prototypes.c" 2
