@@ -2109,6 +2109,10 @@ _Bool isScore = 0;
 void initGame() {
     ballX = 4;
     ballYState = 0b00001000;
+
+    MAX7219_write(8, 0b00000000);
+    MAX7219_write(1, 0b00000000);
+
     MAX7219_write(7, p1State);
     MAX7219_write(2, p2State);
     MAX7219_write(ballX, ballYState);
@@ -2251,13 +2255,13 @@ void updateBallPosition() {
     int ballXprev = ballX;
 
     if (ballX == 2) {
-        if ((p2State & ballYState) == p2State) {
+        if (p2State & ballYState) {
             ballDirX = -ballDirX;
             ballDirY = -ballDirY;
         }
     }
     else if (ballX == 7) {
-        if ((p1State & ballYState) == p1State) {
+        if (p1State & ballYState) {
             ballDirX = -ballDirX;
             ballDirY = -ballDirY;
         }

@@ -13,21 +13,21 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "53 C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
 [v _initGame initGame `(v  1 e 1 0 ]
-"62
-[v _readButton0 readButton0 `(i  1 e 2 0 ]
 "66
-[v _readButton1 readButton1 `(i  1 e 2 0 ]
+[v _readButton0 readButton0 `(i  1 e 2 0 ]
 "70
-[v _readButton2 readButton2 `(i  1 e 2 0 ]
+[v _readButton1 readButton1 `(i  1 e 2 0 ]
 "74
-[v _readButton3 readButton3 `(i  1 e 2 0 ]
+[v _readButton2 readButton2 `(i  1 e 2 0 ]
 "78
+[v _readButton3 readButton3 `(i  1 e 2 0 ]
+"82
 [v _buttonGoUp buttonGoUp `(v  1 e 1 0 ]
-"136
+"140
 [v _buttonGoDown buttonGoDown `(v  1 e 1 0 ]
-"194
+"198
 [v _updateBallPosition updateBallPosition `(v  1 e 1 0 ]
-"239
+"243
 [v _main main `(i  1 e 2 0 ]
 "12 C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
 [v _MAX7219_init MAX7219_init `(v  1 e 1 0 ]
@@ -83,54 +83,54 @@
 [v _ballYState ballYState `uc  1 e 1 0 ]
 "51
 [v _isScore isScore `a  1 e 1 0 ]
-"239
+"243
 [v _main main `(i  1 e 2 0 ]
 {
-"268
+"272
 } 0
-"194
+"198
 [v _updateBallPosition updateBallPosition `(v  1 e 1 0 ]
 {
-"195
+"199
 [v updateBallPosition@ballXprev ballXprev `i  1 a 2 0 ]
-"237
+"241
+} 0
+"78
+[v _readButton3 readButton3 `(i  1 e 2 0 ]
+{
+"80
 } 0
 "74
-[v _readButton3 readButton3 `(i  1 e 2 0 ]
+[v _readButton2 readButton2 `(i  1 e 2 0 ]
 {
 "76
 } 0
 "70
-[v _readButton2 readButton2 `(i  1 e 2 0 ]
+[v _readButton1 readButton1 `(i  1 e 2 0 ]
 {
 "72
 } 0
 "66
-[v _readButton1 readButton1 `(i  1 e 2 0 ]
-{
-"68
-} 0
-"62
 [v _readButton0 readButton0 `(i  1 e 2 0 ]
 {
-"64
+"68
 } 0
 "53
 [v _initGame initGame `(v  1 e 1 0 ]
 {
-"60
+"64
 } 0
-"78
+"82
 [v _buttonGoUp buttonGoUp `(v  1 e 1 0 ]
 {
 [v buttonGoUp@player player `i  1 p 2 7 ]
-"134
+"138
 } 0
-"136
+"140
 [v _buttonGoDown buttonGoDown `(v  1 e 1 0 ]
 {
 [v buttonGoDown@player player `i  1 p 2 7 ]
-"192
+"196
 } 0
 "12 C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
 [v _MAX7219_init MAX7219_init `(v  1 e 1 0 ]

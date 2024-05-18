@@ -199,13 +199,13 @@ void updateBallPosition() {
     int ballXprev = ballX;
 
     if (ballX == 2) {//pade çarpt? m?  
-        if ((p2State & ballYState) == p2State) {
+        if (p2State & ballYState) {
             ballDirX = -ballDirX;
             ballDirY = -ballDirY;
         }
     }
     else if (ballX == 7) {//pade çarpt? m?  
-        if ((p1State & ballYState) == p1State) {
+        if (p1State & ballYState) {
             ballDirX = -ballDirX;
             ballDirY = -ballDirY;
         }

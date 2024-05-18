@@ -262,111 +262,105 @@ Version 4.0 HI-TECH Software Intermediate Code
 "55
 [; ;main.c: 55:     ballYState = 0b00001000;
 [e = _ballYState -> -> 8 `i `uc ]
-"56
-[; ;main.c: 56:     MAX7219_write(7, p1State);
-[e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
 "57
-[; ;main.c: 57:     MAX7219_write(2, p2State);
-[e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
+[; ;main.c: 57:     MAX7219_write(8, 0b00000000);
+[e ( _MAX7219_write (2 , -> -> 8 `i `uc -> -> 0 `i `uc ]
 "58
-[; ;main.c: 58:     MAX7219_write(ballX, ballYState);
-[e ( _MAX7219_write (2 , -> _ballX `uc _ballYState ]
-"59
-[; ;main.c: 59:     isScore = 0;
-[e = _isScore -> -> 0 `i `a ]
+[; ;main.c: 58:     MAX7219_write(1, 0b00000000);
+[e ( _MAX7219_write (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
 "60
-[; ;main.c: 60: }
+[; ;main.c: 60:     MAX7219_write(7, p1State);
+[e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
+"61
+[; ;main.c: 61:     MAX7219_write(2, p2State);
+[e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
+"62
+[; ;main.c: 62:     MAX7219_write(ballX, ballYState);
+[e ( _MAX7219_write (2 , -> _ballX `uc _ballYState ]
+"63
+[; ;main.c: 63:     isScore = 0;
+[e = _isScore -> -> 0 `i `a ]
+"64
+[; ;main.c: 64: }
 [e :UE 101 ]
 }
-"62
-[; ;main.c: 62: int readButton0() {
+"66
+[; ;main.c: 66: int readButton0() {
 [v _readButton0 `(i ~T0 @X0 1 ef ]
 {
 [e :U _readButton0 ]
 [f ]
-"63
-[; ;main.c: 63:     return RB0;
+"67
+[; ;main.c: 67:     return RB0;
 [e ) -> _RB0 `i ]
 [e $UE 102  ]
-"64
-[; ;main.c: 64: }
+"68
+[; ;main.c: 68: }
 [e :UE 102 ]
 }
-"66
-[; ;main.c: 66: int readButton1() {
+"70
+[; ;main.c: 70: int readButton1() {
 [v _readButton1 `(i ~T0 @X0 1 ef ]
 {
 [e :U _readButton1 ]
 [f ]
-"67
-[; ;main.c: 67:     return RB1;
+"71
+[; ;main.c: 71:     return RB1;
 [e ) -> _RB1 `i ]
 [e $UE 103  ]
-"68
-[; ;main.c: 68: }
+"72
+[; ;main.c: 72: }
 [e :UE 103 ]
 }
-"70
-[; ;main.c: 70: int readButton2() {
+"74
+[; ;main.c: 74: int readButton2() {
 [v _readButton2 `(i ~T0 @X0 1 ef ]
 {
 [e :U _readButton2 ]
 [f ]
-"71
-[; ;main.c: 71:     return RB2;
+"75
+[; ;main.c: 75:     return RB2;
 [e ) -> _RB2 `i ]
 [e $UE 104  ]
-"72
-[; ;main.c: 72: }
+"76
+[; ;main.c: 76: }
 [e :UE 104 ]
 }
-"74
-[; ;main.c: 74: int readButton3() {
+"78
+[; ;main.c: 78: int readButton3() {
 [v _readButton3 `(i ~T0 @X0 1 ef ]
 {
 [e :U _readButton3 ]
 [f ]
-"75
-[; ;main.c: 75:     return RB3;
+"79
+[; ;main.c: 79:     return RB3;
 [e ) -> _RB3 `i ]
 [e $UE 105  ]
-"76
-[; ;main.c: 76: }
+"80
+[; ;main.c: 80: }
 [e :UE 105 ]
 }
-"78
-[; ;main.c: 78: void buttonGoUp(int player) {
+"82
+[; ;main.c: 82: void buttonGoUp(int player) {
 [v _buttonGoUp `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _buttonGoUp ]
 [v _player `i ~T0 @X0 1 r1 ]
 [f ]
-"79
-[; ;main.c: 79:     if (player == 1) {
+"83
+[; ;main.c: 83:     if (player == 1) {
 [e $ ! == _player -> 1 `i 107  ]
 {
-"80
-[; ;main.c: 80:         switch (p1State) {
+"84
+[; ;main.c: 84:         switch (p1State) {
 [e $U 109  ]
 {
-"81
-[; ;main.c: 81:             case 0b10000111:
-[e :U 110 ]
-"82
-[; ;main.c: 82:                 p1State = 0b00001111;
-[e = _p1State -> -> 15 `i `uc ]
-"83
-[; ;main.c: 83:                 MAX7219_write(7, p1State);
-[e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
-"84
-[; ;main.c: 84:                 break;
-[e $U 108  ]
 "85
-[; ;main.c: 85:             case 0b00001111:
-[e :U 111 ]
+[; ;main.c: 85:             case 0b10000111:
+[e :U 110 ]
 "86
-[; ;main.c: 86:                 p1State = 0b00011110;
-[e = _p1State -> -> 30 `i `uc ]
+[; ;main.c: 86:                 p1State = 0b00001111;
+[e = _p1State -> -> 15 `i `uc ]
 "87
 [; ;main.c: 87:                 MAX7219_write(7, p1State);
 [e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
@@ -374,11 +368,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 88:                 break;
 [e $U 108  ]
 "89
-[; ;main.c: 89:             case 0b00011110:
-[e :U 112 ]
+[; ;main.c: 89:             case 0b00001111:
+[e :U 111 ]
 "90
-[; ;main.c: 90:                 p1State = 0b00111100;
-[e = _p1State -> -> 60 `i `uc ]
+[; ;main.c: 90:                 p1State = 0b00011110;
+[e = _p1State -> -> 30 `i `uc ]
 "91
 [; ;main.c: 91:                 MAX7219_write(7, p1State);
 [e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
@@ -386,11 +380,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 92:                 break;
 [e $U 108  ]
 "93
-[; ;main.c: 93:             case 0b00111100:
-[e :U 113 ]
+[; ;main.c: 93:             case 0b00011110:
+[e :U 112 ]
 "94
-[; ;main.c: 94:                 p1State = 0b01111000;
-[e = _p1State -> -> 120 `i `uc ]
+[; ;main.c: 94:                 p1State = 0b00111100;
+[e = _p1State -> -> 60 `i `uc ]
 "95
 [; ;main.c: 95:                 MAX7219_write(7, p1State);
 [e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
@@ -398,8 +392,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 96:                 break;
 [e $U 108  ]
 "97
-[; ;main.c: 97:             case 0b01111000:
-[e :U 114 ]
+[; ;main.c: 97:             case 0b00111100:
+[e :U 113 ]
 "98
 [; ;main.c: 98:                 p1State = 0b01111000;
 [e = _p1State -> -> 120 `i `uc ]
@@ -410,11 +404,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 100:                 break;
 [e $U 108  ]
 "101
-[; ;main.c: 101:             default:
-[e :U 115 ]
+[; ;main.c: 101:             case 0b01111000:
+[e :U 114 ]
 "102
-[; ;main.c: 102:                 p1State = 0b00011110;
-[e = _p1State -> -> 30 `i `uc ]
+[; ;main.c: 102:                 p1State = 0b01111000;
+[e = _p1State -> -> 120 `i `uc ]
 "103
 [; ;main.c: 103:                 MAX7219_write(7, p1State);
 [e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
@@ -422,7 +416,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 104:                 break;
 [e $U 108  ]
 "105
-[; ;main.c: 105:         }
+[; ;main.c: 105:             default:
+[e :U 115 ]
+"106
+[; ;main.c: 106:                 p1State = 0b00011110;
+[e = _p1State -> -> 30 `i `uc ]
+"107
+[; ;main.c: 107:                 MAX7219_write(7, p1State);
+[e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
+"108
+[; ;main.c: 108:                 break;
+[e $U 108  ]
+"109
+[; ;main.c: 109:         }
 }
 [e $U 108  ]
 [e :U 109 ]
@@ -433,34 +439,22 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 120 `i 114
  115 ]
 [e :U 108 ]
-"106
-[; ;main.c: 106:     } else {
+"110
+[; ;main.c: 110:     } else {
 }
 [e $U 116  ]
 [e :U 107 ]
 {
-"107
-[; ;main.c: 107:         switch (p2State) {
+"111
+[; ;main.c: 111:         switch (p2State) {
 [e $U 118  ]
 {
-"108
-[; ;main.c: 108:             case 0b10000111:
-[e :U 119 ]
-"109
-[; ;main.c: 109:                 p2State = 0b00001111;
-[e = _p2State -> -> 15 `i `uc ]
-"110
-[; ;main.c: 110:                 MAX7219_write(2, p2State);
-[e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
-"111
-[; ;main.c: 111:                 break;
-[e $U 117  ]
 "112
-[; ;main.c: 112:             case 0b00001111:
-[e :U 120 ]
+[; ;main.c: 112:             case 0b10000111:
+[e :U 119 ]
 "113
-[; ;main.c: 113:                 p2State = 0b00011110;
-[e = _p2State -> -> 30 `i `uc ]
+[; ;main.c: 113:                 p2State = 0b00001111;
+[e = _p2State -> -> 15 `i `uc ]
 "114
 [; ;main.c: 114:                 MAX7219_write(2, p2State);
 [e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
@@ -468,11 +462,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 115:                 break;
 [e $U 117  ]
 "116
-[; ;main.c: 116:             case 0b00011110:
-[e :U 121 ]
+[; ;main.c: 116:             case 0b00001111:
+[e :U 120 ]
 "117
-[; ;main.c: 117:                 p2State = 0b00111100;
-[e = _p2State -> -> 60 `i `uc ]
+[; ;main.c: 117:                 p2State = 0b00011110;
+[e = _p2State -> -> 30 `i `uc ]
 "118
 [; ;main.c: 118:                 MAX7219_write(2, p2State);
 [e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
@@ -480,11 +474,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 119:                 break;
 [e $U 117  ]
 "120
-[; ;main.c: 120:             case 0b00111100:
-[e :U 122 ]
+[; ;main.c: 120:             case 0b00011110:
+[e :U 121 ]
 "121
-[; ;main.c: 121:                 p2State = 0b01111000;
-[e = _p2State -> -> 120 `i `uc ]
+[; ;main.c: 121:                 p2State = 0b00111100;
+[e = _p2State -> -> 60 `i `uc ]
 "122
 [; ;main.c: 122:                 MAX7219_write(2, p2State);
 [e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
@@ -492,8 +486,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 123:                 break;
 [e $U 117  ]
 "124
-[; ;main.c: 124:             case 0b01111000:
-[e :U 123 ]
+[; ;main.c: 124:             case 0b00111100:
+[e :U 122 ]
 "125
 [; ;main.c: 125:                 p2State = 0b01111000;
 [e = _p2State -> -> 120 `i `uc ]
@@ -504,11 +498,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 127:                 break;
 [e $U 117  ]
 "128
-[; ;main.c: 128:             default:
-[e :U 124 ]
+[; ;main.c: 128:             case 0b01111000:
+[e :U 123 ]
 "129
-[; ;main.c: 129:                 p2State = 0b00011110;
-[e = _p2State -> -> 30 `i `uc ]
+[; ;main.c: 129:                 p2State = 0b01111000;
+[e = _p2State -> -> 120 `i `uc ]
 "130
 [; ;main.c: 130:                 MAX7219_write(2, p2State);
 [e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
@@ -516,7 +510,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 131:                 break;
 [e $U 117  ]
 "132
-[; ;main.c: 132:         }
+[; ;main.c: 132:             default:
+[e :U 124 ]
+"133
+[; ;main.c: 133:                 p2State = 0b00011110;
+[e = _p2State -> -> 30 `i `uc ]
+"134
+[; ;main.c: 134:                 MAX7219_write(2, p2State);
+[e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
+"135
+[; ;main.c: 135:                 break;
+[e $U 117  ]
+"136
+[; ;main.c: 136:         }
 }
 [e $U 117  ]
 [e :U 118 ]
@@ -527,44 +533,32 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 120 `i 123
  124 ]
 [e :U 117 ]
-"133
-[; ;main.c: 133:     }
+"137
+[; ;main.c: 137:     }
 }
 [e :U 116 ]
-"134
-[; ;main.c: 134: }
+"138
+[; ;main.c: 138: }
 [e :UE 106 ]
 }
-"136
-[; ;main.c: 136: void buttonGoDown(int player) {
+"140
+[; ;main.c: 140: void buttonGoDown(int player) {
 [v _buttonGoDown `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _buttonGoDown ]
 [v _player `i ~T0 @X0 1 r1 ]
 [f ]
-"137
-[; ;main.c: 137:     if (player == 1) {
+"141
+[; ;main.c: 141:     if (player == 1) {
 [e $ ! == _player -> 1 `i 126  ]
 {
-"138
-[; ;main.c: 138:         switch (p1State) {
+"142
+[; ;main.c: 142:         switch (p1State) {
 [e $U 128  ]
 {
-"139
-[; ;main.c: 139:             case 0b10000111:
-[e :U 129 ]
-"140
-[; ;main.c: 140:                 p1State = 0b10000111;
-[e = _p1State -> -> 135 `i `uc ]
-"141
-[; ;main.c: 141:                 MAX7219_write(7, p1State);
-[e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
-"142
-[; ;main.c: 142:                 break;
-[e $U 127  ]
 "143
-[; ;main.c: 143:             case 0b00001111:
-[e :U 130 ]
+[; ;main.c: 143:             case 0b10000111:
+[e :U 129 ]
 "144
 [; ;main.c: 144:                 p1State = 0b10000111;
 [e = _p1State -> -> 135 `i `uc ]
@@ -575,11 +569,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 146:                 break;
 [e $U 127  ]
 "147
-[; ;main.c: 147:             case 0b00011110:
-[e :U 131 ]
+[; ;main.c: 147:             case 0b00001111:
+[e :U 130 ]
 "148
-[; ;main.c: 148:                 p1State = 0b00001111;
-[e = _p1State -> -> 15 `i `uc ]
+[; ;main.c: 148:                 p1State = 0b10000111;
+[e = _p1State -> -> 135 `i `uc ]
 "149
 [; ;main.c: 149:                 MAX7219_write(7, p1State);
 [e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
@@ -587,11 +581,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 150:                 break;
 [e $U 127  ]
 "151
-[; ;main.c: 151:             case 0b00111100:
-[e :U 132 ]
+[; ;main.c: 151:             case 0b00011110:
+[e :U 131 ]
 "152
-[; ;main.c: 152:                 p1State = 0b00011110;
-[e = _p1State -> -> 30 `i `uc ]
+[; ;main.c: 152:                 p1State = 0b00001111;
+[e = _p1State -> -> 15 `i `uc ]
 "153
 [; ;main.c: 153:                 MAX7219_write(7, p1State);
 [e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
@@ -599,11 +593,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 154:                 break;
 [e $U 127  ]
 "155
-[; ;main.c: 155:             case 0b01111000:
-[e :U 133 ]
+[; ;main.c: 155:             case 0b00111100:
+[e :U 132 ]
 "156
-[; ;main.c: 156:                 p1State = 0b00111100;
-[e = _p1State -> -> 60 `i `uc ]
+[; ;main.c: 156:                 p1State = 0b00011110;
+[e = _p1State -> -> 30 `i `uc ]
 "157
 [; ;main.c: 157:                 MAX7219_write(7, p1State);
 [e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
@@ -611,11 +605,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 158:                 break;
 [e $U 127  ]
 "159
-[; ;main.c: 159:             default:
-[e :U 134 ]
+[; ;main.c: 159:             case 0b01111000:
+[e :U 133 ]
 "160
-[; ;main.c: 160:                 p1State = 0b00011110;
-[e = _p1State -> -> 30 `i `uc ]
+[; ;main.c: 160:                 p1State = 0b00111100;
+[e = _p1State -> -> 60 `i `uc ]
 "161
 [; ;main.c: 161:                 MAX7219_write(7, p1State);
 [e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
@@ -623,7 +617,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 162:                 break;
 [e $U 127  ]
 "163
-[; ;main.c: 163:         }
+[; ;main.c: 163:             default:
+[e :U 134 ]
+"164
+[; ;main.c: 164:                 p1State = 0b00011110;
+[e = _p1State -> -> 30 `i `uc ]
+"165
+[; ;main.c: 165:                 MAX7219_write(7, p1State);
+[e ( _MAX7219_write (2 , -> -> 7 `i `uc _p1State ]
+"166
+[; ;main.c: 166:                 break;
+[e $U 127  ]
+"167
+[; ;main.c: 167:         }
 }
 [e $U 127  ]
 [e :U 128 ]
@@ -634,31 +640,19 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 120 `i 133
  134 ]
 [e :U 127 ]
-"164
-[; ;main.c: 164:     } else {
+"168
+[; ;main.c: 168:     } else {
 }
 [e $U 135  ]
 [e :U 126 ]
 {
-"165
-[; ;main.c: 165:         switch (p2State) {
+"169
+[; ;main.c: 169:         switch (p2State) {
 [e $U 137  ]
 {
-"166
-[; ;main.c: 166:             case 0b10000111:
-[e :U 138 ]
-"167
-[; ;main.c: 167:                 p2State = 0b10000111;
-[e = _p2State -> -> 135 `i `uc ]
-"168
-[; ;main.c: 168:                 MAX7219_write(2, p2State);
-[e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
-"169
-[; ;main.c: 169:                 break;
-[e $U 136  ]
 "170
-[; ;main.c: 170:             case 0b00001111:
-[e :U 139 ]
+[; ;main.c: 170:             case 0b10000111:
+[e :U 138 ]
 "171
 [; ;main.c: 171:                 p2State = 0b10000111;
 [e = _p2State -> -> 135 `i `uc ]
@@ -669,11 +663,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 173:                 break;
 [e $U 136  ]
 "174
-[; ;main.c: 174:             case 0b00011110:
-[e :U 140 ]
+[; ;main.c: 174:             case 0b00001111:
+[e :U 139 ]
 "175
-[; ;main.c: 175:                 p2State = 0b00001111;
-[e = _p2State -> -> 15 `i `uc ]
+[; ;main.c: 175:                 p2State = 0b10000111;
+[e = _p2State -> -> 135 `i `uc ]
 "176
 [; ;main.c: 176:                 MAX7219_write(2, p2State);
 [e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
@@ -681,11 +675,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 177:                 break;
 [e $U 136  ]
 "178
-[; ;main.c: 178:             case 0b00111100:
-[e :U 141 ]
+[; ;main.c: 178:             case 0b00011110:
+[e :U 140 ]
 "179
-[; ;main.c: 179:                 p2State = 0b00011110;
-[e = _p2State -> -> 30 `i `uc ]
+[; ;main.c: 179:                 p2State = 0b00001111;
+[e = _p2State -> -> 15 `i `uc ]
 "180
 [; ;main.c: 180:                 MAX7219_write(2, p2State);
 [e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
@@ -693,11 +687,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 181:                 break;
 [e $U 136  ]
 "182
-[; ;main.c: 182:             case 0b01111000:
-[e :U 142 ]
+[; ;main.c: 182:             case 0b00111100:
+[e :U 141 ]
 "183
-[; ;main.c: 183:                 p2State = 0b00111100;
-[e = _p2State -> -> 60 `i `uc ]
+[; ;main.c: 183:                 p2State = 0b00011110;
+[e = _p2State -> -> 30 `i `uc ]
 "184
 [; ;main.c: 184:                 MAX7219_write(2, p2State);
 [e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
@@ -705,11 +699,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 185:                 break;
 [e $U 136  ]
 "186
-[; ;main.c: 186:             default:
-[e :U 143 ]
+[; ;main.c: 186:             case 0b01111000:
+[e :U 142 ]
 "187
-[; ;main.c: 187:                 p2State = 0b00000010 | 0b00000100 | 0b00001000 | 0b00010000;
-[e = _p2State -> | | | -> 2 `i -> 4 `i -> 8 `i -> 16 `i `uc ]
+[; ;main.c: 187:                 p2State = 0b00111100;
+[e = _p2State -> -> 60 `i `uc ]
 "188
 [; ;main.c: 188:                 MAX7219_write(2, p2State);
 [e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
@@ -717,7 +711,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 189:                 break;
 [e $U 136  ]
 "190
-[; ;main.c: 190:         }
+[; ;main.c: 190:             default:
+[e :U 143 ]
+"191
+[; ;main.c: 191:                 p2State = 0b00000010 | 0b00000100 | 0b00001000 | 0b00010000;
+[e = _p2State -> | | | -> 2 `i -> 4 `i -> 8 `i -> 16 `i `uc ]
+"192
+[; ;main.c: 192:                 MAX7219_write(2, p2State);
+[e ( _MAX7219_write (2 , -> -> 2 `i `uc _p2State ]
+"193
+[; ;main.c: 193:                 break;
+[e $U 136  ]
+"194
+[; ;main.c: 194:         }
 }
 [e $U 136  ]
 [e :U 137 ]
@@ -728,158 +734,158 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 120 `i 142
  143 ]
 [e :U 136 ]
-"191
-[; ;main.c: 191:     }
+"195
+[; ;main.c: 195:     }
 }
 [e :U 135 ]
-"192
-[; ;main.c: 192: }
+"196
+[; ;main.c: 196: }
 [e :UE 125 ]
 }
-"194
-[; ;main.c: 194: void updateBallPosition() {
+"198
+[; ;main.c: 198: void updateBallPosition() {
 [v _updateBallPosition `(v ~T0 @X0 1 ef ]
 {
 [e :U _updateBallPosition ]
 [f ]
-"195
-[; ;main.c: 195:     int ballXprev = ballX;
+"199
+[; ;main.c: 199:     int ballXprev = ballX;
 [v _ballXprev `i ~T0 @X0 1 a ]
 [e = _ballXprev _ballX ]
-"197
-[; ;main.c: 197:     if (ballX == 2) {
+"201
+[; ;main.c: 201:     if (ballX == 2) {
 [e $ ! == _ballX -> 2 `i 145  ]
 {
-"198
-[; ;main.c: 198:         if ((p2State & ballYState) == p2State) {
-[e $ ! == & -> _p2State `i -> _ballYState `i -> _p2State `i 146  ]
+"202
+[; ;main.c: 202:         if (p2State & ballYState) {
+[e $ ! != & -> _p2State `i -> _ballYState `i -> 0 `i 146  ]
 {
-"199
-[; ;main.c: 199:             ballDirX = -ballDirX;
+"203
+[; ;main.c: 203:             ballDirX = -ballDirX;
 [e = _ballDirX -U _ballDirX ]
-"200
-[; ;main.c: 200:             ballDirY = -ballDirY;
+"204
+[; ;main.c: 204:             ballDirY = -ballDirY;
 [e = _ballDirY -U _ballDirY ]
-"201
-[; ;main.c: 201:         }
+"205
+[; ;main.c: 205:         }
 }
 [e :U 146 ]
-"202
-[; ;main.c: 202:     }
+"206
+[; ;main.c: 206:     }
 }
 [e $U 147  ]
-"203
-[; ;main.c: 203:     else if (ballX == 7) {
+"207
+[; ;main.c: 207:     else if (ballX == 7) {
 [e :U 145 ]
 [e $ ! == _ballX -> 7 `i 148  ]
 {
-"204
-[; ;main.c: 204:         if ((p1State & ballYState) == p1State) {
-[e $ ! == & -> _p1State `i -> _ballYState `i -> _p1State `i 149  ]
+"208
+[; ;main.c: 208:         if (p1State & ballYState) {
+[e $ ! != & -> _p1State `i -> _ballYState `i -> 0 `i 149  ]
 {
-"205
-[; ;main.c: 205:             ballDirX = -ballDirX;
+"209
+[; ;main.c: 209:             ballDirX = -ballDirX;
 [e = _ballDirX -U _ballDirX ]
-"206
-[; ;main.c: 206:             ballDirY = -ballDirY;
+"210
+[; ;main.c: 210:             ballDirY = -ballDirY;
 [e = _ballDirY -U _ballDirY ]
-"207
-[; ;main.c: 207:         }
+"211
+[; ;main.c: 211:         }
 }
 [e :U 149 ]
-"208
-[; ;main.c: 208:     }
+"212
+[; ;main.c: 212:     }
 }
 [e :U 148 ]
 [e :U 147 ]
-"209
-[; ;main.c: 209:     ballX += ballDirX;
+"213
+[; ;main.c: 213:     ballX += ballDirX;
 [e =+ _ballX _ballDirX ]
-"211
-[; ;main.c: 211:     if ((ballYState & 0b10000000) == 0b10000000) {
+"215
+[; ;main.c: 215:     if ((ballYState & 0b10000000) == 0b10000000) {
 [e $ ! == & -> _ballYState `i -> 128 `i -> 128 `i 150  ]
 {
-"212
-[; ;main.c: 212:         ballYState = (ballDirY == 1) ? 0b00000001 : 0b10000000;
+"216
+[; ;main.c: 216:         ballYState = (ballDirY == 1) ? 0b00000001 : 0b10000000;
 [e = _ballYState -> ? == _ballDirY -> 1 `i : -> 1 `i -> 128 `i `uc ]
-"213
-[; ;main.c: 213:         ballDirY = 1;
+"217
+[; ;main.c: 217:         ballDirY = 1;
 [e = _ballDirY -> 1 `i ]
-"214
-[; ;main.c: 214:     } else if ((ballYState & 0b00000001) == 0b00000001) {
+"218
+[; ;main.c: 218:     } else if ((ballYState & 0b00000001) == 0b00000001) {
 }
 [e $U 151  ]
 [e :U 150 ]
 [e $ ! == & -> _ballYState `i -> 1 `i -> 1 `i 152  ]
 {
-"215
-[; ;main.c: 215:         ballYState = (ballDirY == 1) ? 0b00000010 : 0b10000000;
+"219
+[; ;main.c: 219:         ballYState = (ballDirY == 1) ? 0b00000010 : 0b10000000;
 [e = _ballYState -> ? == _ballDirY -> 1 `i : -> 2 `i -> 128 `i `uc ]
-"216
-[; ;main.c: 216:     } else if ((ballYState & 0b00000010) == 0b00000010) {
+"220
+[; ;main.c: 220:     } else if ((ballYState & 0b00000010) == 0b00000010) {
 }
 [e $U 153  ]
 [e :U 152 ]
 [e $ ! == & -> _ballYState `i -> 2 `i -> 2 `i 154  ]
 {
-"217
-[; ;main.c: 217:         ballYState = (ballDirY == 1) ? 0b00000100 : 0b00000001;
+"221
+[; ;main.c: 221:         ballYState = (ballDirY == 1) ? 0b00000100 : 0b00000001;
 [e = _ballYState -> ? == _ballDirY -> 1 `i : -> 4 `i -> 1 `i `uc ]
-"218
-[; ;main.c: 218:     } else if ((ballYState & 0b00000100) == 0b00000100) {
+"222
+[; ;main.c: 222:     } else if ((ballYState & 0b00000100) == 0b00000100) {
 }
 [e $U 155  ]
 [e :U 154 ]
 [e $ ! == & -> _ballYState `i -> 4 `i -> 4 `i 156  ]
 {
-"219
-[; ;main.c: 219:         ballYState = (ballDirY == 1) ? 0b00001000 : 0b00000010;
+"223
+[; ;main.c: 223:         ballYState = (ballDirY == 1) ? 0b00001000 : 0b00000010;
 [e = _ballYState -> ? == _ballDirY -> 1 `i : -> 8 `i -> 2 `i `uc ]
-"220
-[; ;main.c: 220:     } else if ((ballYState & 0b00001000) == 0b00001000) {
+"224
+[; ;main.c: 224:     } else if ((ballYState & 0b00001000) == 0b00001000) {
 }
 [e $U 157  ]
 [e :U 156 ]
 [e $ ! == & -> _ballYState `i -> 8 `i -> 8 `i 158  ]
 {
-"221
-[; ;main.c: 221:         ballYState = (ballDirY == 1) ? 0b00010000 : 0b00000100;
+"225
+[; ;main.c: 225:         ballYState = (ballDirY == 1) ? 0b00010000 : 0b00000100;
 [e = _ballYState -> ? == _ballDirY -> 1 `i : -> 16 `i -> 4 `i `uc ]
-"222
-[; ;main.c: 222:     } else if ((ballYState & 0b00010000) == 0b00010000) {
+"226
+[; ;main.c: 226:     } else if ((ballYState & 0b00010000) == 0b00010000) {
 }
 [e $U 159  ]
 [e :U 158 ]
 [e $ ! == & -> _ballYState `i -> 16 `i -> 16 `i 160  ]
 {
-"223
-[; ;main.c: 223:         ballYState = (ballDirY == 1) ? 0b00100000 : 0b00001000;
+"227
+[; ;main.c: 227:         ballYState = (ballDirY == 1) ? 0b00100000 : 0b00001000;
 [e = _ballYState -> ? == _ballDirY -> 1 `i : -> 32 `i -> 8 `i `uc ]
-"224
-[; ;main.c: 224:     } else if ((ballYState & 0b00100000) == 0b00100000) {
+"228
+[; ;main.c: 228:     } else if ((ballYState & 0b00100000) == 0b00100000) {
 }
 [e $U 161  ]
 [e :U 160 ]
 [e $ ! == & -> _ballYState `i -> 32 `i -> 32 `i 162  ]
 {
-"225
-[; ;main.c: 225:         ballYState = (ballDirY == 1) ? 0b01000000 : 0b00010000;
+"229
+[; ;main.c: 229:         ballYState = (ballDirY == 1) ? 0b01000000 : 0b00010000;
 [e = _ballYState -> ? == _ballDirY -> 1 `i : -> 64 `i -> 16 `i `uc ]
-"226
-[; ;main.c: 226:     } else if ((ballYState & 0b01000000) == 0b01000000) {
+"230
+[; ;main.c: 230:     } else if ((ballYState & 0b01000000) == 0b01000000) {
 }
 [e $U 163  ]
 [e :U 162 ]
 [e $ ! == & -> _ballYState `i -> 64 `i -> 64 `i 164  ]
 {
-"227
-[; ;main.c: 227:         ballYState = (ballDirY == 1) ? 0b01000000 : 0b00100000;
+"231
+[; ;main.c: 231:         ballYState = (ballDirY == 1) ? 0b01000000 : 0b00100000;
 [e = _ballYState -> ? == _ballDirY -> 1 `i : -> 64 `i -> 32 `i `uc ]
-"228
-[; ;main.c: 228:         ballDirY = -1;
+"232
+[; ;main.c: 232:         ballDirY = -1;
 [e = _ballDirY -U -> 1 `i ]
-"229
-[; ;main.c: 229:     }
+"233
+[; ;main.c: 233:     }
 }
 [e :U 164 ]
 [e :U 163 ]
@@ -889,126 +895,126 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 155 ]
 [e :U 153 ]
 [e :U 151 ]
-"231
-[; ;main.c: 231:     if (ballX == 1 || ballX == 8) {
+"235
+[; ;main.c: 235:     if (ballX == 1 || ballX == 8) {
 [e $ ! || == _ballX -> 1 `i == _ballX -> 8 `i 165  ]
 {
-"232
-[; ;main.c: 232:         isScore = 1;
+"236
+[; ;main.c: 236:         isScore = 1;
 [e = _isScore -> -> 1 `i `a ]
-"233
-[; ;main.c: 233:     }
+"237
+[; ;main.c: 237:     }
 }
 [e :U 165 ]
-"235
-[; ;main.c: 235:     MAX7219_write(ballXprev, 0b00000000);
+"239
+[; ;main.c: 239:     MAX7219_write(ballXprev, 0b00000000);
 [e ( _MAX7219_write (2 , -> _ballXprev `uc -> -> 0 `i `uc ]
-"236
-[; ;main.c: 236:     MAX7219_write(ballX, ballYState);
+"240
+[; ;main.c: 240:     MAX7219_write(ballX, ballYState);
 [e ( _MAX7219_write (2 , -> _ballX `uc _ballYState ]
-"237
-[; ;main.c: 237: }
+"241
+[; ;main.c: 241: }
 [e :UE 144 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"239
-[; ;main.c: 239: int main(int argc, char** argv) {
+"243
+[; ;main.c: 243: int main(int argc, char** argv) {
 [v _main `(i ~T0 @X0 1 ef2`i`**uc ]
 {
 [e :U _main ]
 [v _argc `i ~T0 @X0 1 r1 ]
 [v _argv `**uc ~T0 @X0 1 r2 ]
 [f ]
-"240
-[; ;main.c: 240:     TRISB = 0x0F;
+"244
+[; ;main.c: 244:     TRISB = 0x0F;
 [e = _TRISB -> -> 15 `i `uc ]
-"241
-[; ;main.c: 241:     TRISC = 0;
+"245
+[; ;main.c: 245:     TRISC = 0;
 [e = _TRISC -> -> 0 `i `uc ]
-"242
-[; ;main.c: 242:     while (1) {
+"246
+[; ;main.c: 246:     while (1) {
 [e :U 168 ]
 {
-"243
-[; ;main.c: 243:         initGame();
+"247
+[; ;main.c: 247:         initGame();
 [e ( _initGame ..  ]
-"244
-[; ;main.c: 244:         MAX7219_init(1);
+"248
+[; ;main.c: 248:         MAX7219_init(1);
 [e ( _MAX7219_init (1 -> -> 1 `i `uc ]
-"245
-[; ;main.c: 245:         while (!isScore) {
+"249
+[; ;main.c: 249:         while (!isScore) {
 [e $U 170  ]
 [e :U 171 ]
 {
-"247
-[; ;main.c: 247:             if (readButton0() == 1) {
+"251
+[; ;main.c: 251:             if (readButton0() == 1) {
 [e $ ! == ( _readButton0 ..  -> 1 `i 173  ]
 {
-"248
-[; ;main.c: 248:                 buttonGoUp(1);
+"252
+[; ;main.c: 252:                 buttonGoUp(1);
 [e ( _buttonGoUp (1 -> 1 `i ]
-"249
-[; ;main.c: 249:             }
+"253
+[; ;main.c: 253:             }
 }
 [e :U 173 ]
-"250
-[; ;main.c: 250:             if (readButton1() == 1) {
+"254
+[; ;main.c: 254:             if (readButton1() == 1) {
 [e $ ! == ( _readButton1 ..  -> 1 `i 174  ]
 {
-"251
-[; ;main.c: 251:                 buttonGoDown(1);
+"255
+[; ;main.c: 255:                 buttonGoDown(1);
 [e ( _buttonGoDown (1 -> 1 `i ]
-"252
-[; ;main.c: 252:             }
+"256
+[; ;main.c: 256:             }
 }
 [e :U 174 ]
-"253
-[; ;main.c: 253:             if (readButton2() == 1) {
+"257
+[; ;main.c: 257:             if (readButton2() == 1) {
 [e $ ! == ( _readButton2 ..  -> 1 `i 175  ]
 {
-"254
-[; ;main.c: 254:                 buttonGoUp(2);
+"258
+[; ;main.c: 258:                 buttonGoUp(2);
 [e ( _buttonGoUp (1 -> 2 `i ]
-"255
-[; ;main.c: 255:             }
+"259
+[; ;main.c: 259:             }
 }
 [e :U 175 ]
-"256
-[; ;main.c: 256:             if (readButton3() == 1) {
+"260
+[; ;main.c: 260:             if (readButton3() == 1) {
 [e $ ! == ( _readButton3 ..  -> 1 `i 176  ]
 {
-"257
-[; ;main.c: 257:                 buttonGoDown(2);
+"261
+[; ;main.c: 261:                 buttonGoDown(2);
 [e ( _buttonGoDown (1 -> 2 `i ]
-"258
-[; ;main.c: 258:             }
+"262
+[; ;main.c: 262:             }
 }
 [e :U 176 ]
-"259
-[; ;main.c: 259:             _delay((unsigned long)((5)*(800000000/4000.0)));
+"263
+[; ;main.c: 263:             _delay((unsigned long)((5)*(800000000/4000.0)));
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 800000000 `l `d .4000.0 `ul ]
-"260
-[; ;main.c: 260:             updateBallPosition();
+"264
+[; ;main.c: 264:             updateBallPosition();
 [e ( _updateBallPosition ..  ]
-"261
-[; ;main.c: 261:         }
+"265
+[; ;main.c: 265:         }
 }
 [e :U 170 ]
-"245
-[; ;main.c: 245:         while (!isScore) {
+"249
+[; ;main.c: 249:         while (!isScore) {
 [e $ ! != -> _isScore `i -> 0 `i 171  ]
 [e :U 172 ]
-"262
-[; ;main.c: 262:     }
+"266
+[; ;main.c: 266:     }
 }
 [e :U 167 ]
 [e $U 168  ]
 [e :U 169 ]
-"267
-[; ;main.c: 267:     return (0);
+"271
+[; ;main.c: 271:     return (0);
 [e ) -> 0 `i ]
 [e $UE 166  ]
-"268
-[; ;main.c: 268: }
+"272
+[; ;main.c: 272: }
 [e :UE 166 ]
 }
