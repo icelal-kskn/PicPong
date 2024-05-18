@@ -14,7 +14,7 @@ This project implements a basic Pong game using a PIC16F877A microcontroller and
 
 ### Circuit Diagram
 
-![Circuit Diagram](.\proteusFiles\proteusPinSchema.png)
+![Circuit Diagram](./proteusFiles/proteusPinSchema.png)
 
 The circuit diagram shows the connections between the PIC16F877A, the MAX7219, the buttons, and the LED matrix. The buttons are connected to PORTB of the PIC16F877A, while the MAX7219 is connected to PORTC.
 
