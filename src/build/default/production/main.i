@@ -2257,13 +2257,11 @@ void updateBallPosition() {
     if (ballX == 2) {
         if (p2State & ballYState) {
             ballDirX = -ballDirX;
-            ballDirY = -ballDirY;
         }
     }
     else if (ballX == 7) {
         if (p1State & ballYState) {
             ballDirX = -ballDirX;
-            ballDirY = -ballDirY;
         }
     }
     ballX += ballDirX;

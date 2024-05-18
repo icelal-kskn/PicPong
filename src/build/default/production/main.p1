@@ -764,128 +764,122 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 203:             ballDirX = -ballDirX;
 [e = _ballDirX -U _ballDirX ]
 "204
-[; ;main.c: 204:             ballDirY = -ballDirY;
-[e = _ballDirY -U _ballDirY ]
-"205
-[; ;main.c: 205:         }
+[; ;main.c: 204:         }
 }
 [e :U 146 ]
-"206
-[; ;main.c: 206:     }
+"205
+[; ;main.c: 205:     }
 }
 [e $U 147  ]
-"207
-[; ;main.c: 207:     else if (ballX == 7) {
+"206
+[; ;main.c: 206:     else if (ballX == 7) {
 [e :U 145 ]
 [e $ ! == _ballX -> 7 `i 148  ]
 {
-"208
-[; ;main.c: 208:         if (p1State & ballYState) {
+"207
+[; ;main.c: 207:         if (p1State & ballYState) {
 [e $ ! != & -> _p1State `i -> _ballYState `i -> 0 `i 149  ]
 {
-"209
-[; ;main.c: 209:             ballDirX = -ballDirX;
+"208
+[; ;main.c: 208:             ballDirX = -ballDirX;
 [e = _ballDirX -U _ballDirX ]
-"210
-[; ;main.c: 210:             ballDirY = -ballDirY;
-[e = _ballDirY -U _ballDirY ]
-"211
-[; ;main.c: 211:         }
+"209
+[; ;main.c: 209:         }
 }
 [e :U 149 ]
-"212
-[; ;main.c: 212:     }
+"210
+[; ;main.c: 210:     }
 }
 [e :U 148 ]
 [e :U 147 ]
-"213
-[; ;main.c: 213:     ballX += ballDirX;
+"211
+[; ;main.c: 211:     ballX += ballDirX;
 [e =+ _ballX _ballDirX ]
-"215
-[; ;main.c: 215:     if ((ballYState & 0b10000000) == 0b10000000) {
+"213
+[; ;main.c: 213:     if ((ballYState & 0b10000000) == 0b10000000) {
 [e $ ! == & -> _ballYState `i -> 128 `i -> 128 `i 150  ]
 {
-"216
-[; ;main.c: 216:         ballYState = (ballDirY == 1) ? 0b00000001 : 0b10000000;
+"214
+[; ;main.c: 214:         ballYState = (ballDirY == 1) ? 0b00000001 : 0b10000000;
 [e = _ballYState -> ? == _ballDirY -> 1 `i : -> 1 `i -> 128 `i `uc ]
-"217
-[; ;main.c: 217:         ballDirY = 1;
+"215
+[; ;main.c: 215:         ballDirY = 1;
 [e = _ballDirY -> 1 `i ]
-"218
-[; ;main.c: 218:     } else if ((ballYState & 0b00000001) == 0b00000001) {
+"216
+[; ;main.c: 216:     } else if ((ballYState & 0b00000001) == 0b00000001) {
 }
 [e $U 151  ]
 [e :U 150 ]
 [e $ ! == & -> _ballYState `i -> 1 `i -> 1 `i 152  ]
 {
-"219
-[; ;main.c: 219:         ballYState = (ballDirY == 1) ? 0b00000010 : 0b10000000;
+"217
+[; ;main.c: 217:         ballYState = (ballDirY == 1) ? 0b00000010 : 0b10000000;
 [e = _ballYState -> ? == _ballDirY -> 1 `i : -> 2 `i -> 128 `i `uc ]
-"220
-[; ;main.c: 220:     } else if ((ballYState & 0b00000010) == 0b00000010) {
+"218
+[; ;main.c: 218:     } else if ((ballYState & 0b00000010) == 0b00000010) {
 }
 [e $U 153  ]
 [e :U 152 ]
 [e $ ! == & -> _ballYState `i -> 2 `i -> 2 `i 154  ]
 {
-"221
-[; ;main.c: 221:         ballYState = (ballDirY == 1) ? 0b00000100 : 0b00000001;
+"219
+[; ;main.c: 219:         ballYState = (ballDirY == 1) ? 0b00000100 : 0b00000001;
 [e = _ballYState -> ? == _ballDirY -> 1 `i : -> 4 `i -> 1 `i `uc ]
-"222
-[; ;main.c: 222:     } else if ((ballYState & 0b00000100) == 0b00000100) {
+"220
+[; ;main.c: 220:     } else if ((ballYState & 0b00000100) == 0b00000100) {
 }
 [e $U 155  ]
 [e :U 154 ]
 [e $ ! == & -> _ballYState `i -> 4 `i -> 4 `i 156  ]
 {
-"223
-[; ;main.c: 223:         ballYState = (ballDirY == 1) ? 0b00001000 : 0b00000010;
+"221
+[; ;main.c: 221:         ballYState = (ballDirY == 1) ? 0b00001000 : 0b00000010;
 [e = _ballYState -> ? == _ballDirY -> 1 `i : -> 8 `i -> 2 `i `uc ]
-"224
-[; ;main.c: 224:     } else if ((ballYState & 0b00001000) == 0b00001000) {
+"222
+[; ;main.c: 222:     } else if ((ballYState & 0b00001000) == 0b00001000) {
 }
 [e $U 157  ]
 [e :U 156 ]
 [e $ ! == & -> _ballYState `i -> 8 `i -> 8 `i 158  ]
 {
-"225
-[; ;main.c: 225:         ballYState = (ballDirY == 1) ? 0b00010000 : 0b00000100;
+"223
+[; ;main.c: 223:         ballYState = (ballDirY == 1) ? 0b00010000 : 0b00000100;
 [e = _ballYState -> ? == _ballDirY -> 1 `i : -> 16 `i -> 4 `i `uc ]
-"226
-[; ;main.c: 226:     } else if ((ballYState & 0b00010000) == 0b00010000) {
+"224
+[; ;main.c: 224:     } else if ((ballYState & 0b00010000) == 0b00010000) {
 }
 [e $U 159  ]
 [e :U 158 ]
 [e $ ! == & -> _ballYState `i -> 16 `i -> 16 `i 160  ]
 {
-"227
-[; ;main.c: 227:         ballYState = (ballDirY == 1) ? 0b00100000 : 0b00001000;
+"225
+[; ;main.c: 225:         ballYState = (ballDirY == 1) ? 0b00100000 : 0b00001000;
 [e = _ballYState -> ? == _ballDirY -> 1 `i : -> 32 `i -> 8 `i `uc ]
-"228
-[; ;main.c: 228:     } else if ((ballYState & 0b00100000) == 0b00100000) {
+"226
+[; ;main.c: 226:     } else if ((ballYState & 0b00100000) == 0b00100000) {
 }
 [e $U 161  ]
 [e :U 160 ]
 [e $ ! == & -> _ballYState `i -> 32 `i -> 32 `i 162  ]
 {
-"229
-[; ;main.c: 229:         ballYState = (ballDirY == 1) ? 0b01000000 : 0b00010000;
+"227
+[; ;main.c: 227:         ballYState = (ballDirY == 1) ? 0b01000000 : 0b00010000;
 [e = _ballYState -> ? == _ballDirY -> 1 `i : -> 64 `i -> 16 `i `uc ]
-"230
-[; ;main.c: 230:     } else if ((ballYState & 0b01000000) == 0b01000000) {
+"228
+[; ;main.c: 228:     } else if ((ballYState & 0b01000000) == 0b01000000) {
 }
 [e $U 163  ]
 [e :U 162 ]
 [e $ ! == & -> _ballYState `i -> 64 `i -> 64 `i 164  ]
 {
-"231
-[; ;main.c: 231:         ballYState = (ballDirY == 1) ? 0b01000000 : 0b00100000;
+"229
+[; ;main.c: 229:         ballYState = (ballDirY == 1) ? 0b01000000 : 0b00100000;
 [e = _ballYState -> ? == _ballDirY -> 1 `i : -> 64 `i -> 32 `i `uc ]
-"232
-[; ;main.c: 232:         ballDirY = -1;
+"230
+[; ;main.c: 230:         ballDirY = -1;
 [e = _ballDirY -U -> 1 `i ]
-"233
-[; ;main.c: 233:     }
+"231
+[; ;main.c: 231:     }
 }
 [e :U 164 ]
 [e :U 163 ]
@@ -895,126 +889,126 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 155 ]
 [e :U 153 ]
 [e :U 151 ]
-"235
-[; ;main.c: 235:     if (ballX == 1 || ballX == 8) {
+"233
+[; ;main.c: 233:     if (ballX == 1 || ballX == 8) {
 [e $ ! || == _ballX -> 1 `i == _ballX -> 8 `i 165  ]
 {
-"236
-[; ;main.c: 236:         isScore = 1;
+"234
+[; ;main.c: 234:         isScore = 1;
 [e = _isScore -> -> 1 `i `a ]
-"237
-[; ;main.c: 237:     }
+"235
+[; ;main.c: 235:     }
 }
 [e :U 165 ]
-"239
-[; ;main.c: 239:     MAX7219_write(ballXprev, 0b00000000);
+"237
+[; ;main.c: 237:     MAX7219_write(ballXprev, 0b00000000);
 [e ( _MAX7219_write (2 , -> _ballXprev `uc -> -> 0 `i `uc ]
-"240
-[; ;main.c: 240:     MAX7219_write(ballX, ballYState);
+"238
+[; ;main.c: 238:     MAX7219_write(ballX, ballYState);
 [e ( _MAX7219_write (2 , -> _ballX `uc _ballYState ]
-"241
-[; ;main.c: 241: }
+"239
+[; ;main.c: 239: }
 [e :UE 144 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"243
-[; ;main.c: 243: int main(int argc, char** argv) {
+"241
+[; ;main.c: 241: int main(int argc, char** argv) {
 [v _main `(i ~T0 @X0 1 ef2`i`**uc ]
 {
 [e :U _main ]
 [v _argc `i ~T0 @X0 1 r1 ]
 [v _argv `**uc ~T0 @X0 1 r2 ]
 [f ]
-"244
-[; ;main.c: 244:     TRISB = 0x0F;
+"242
+[; ;main.c: 242:     TRISB = 0x0F;
 [e = _TRISB -> -> 15 `i `uc ]
-"245
-[; ;main.c: 245:     TRISC = 0;
+"243
+[; ;main.c: 243:     TRISC = 0;
 [e = _TRISC -> -> 0 `i `uc ]
-"246
-[; ;main.c: 246:     while (1) {
+"244
+[; ;main.c: 244:     while (1) {
 [e :U 168 ]
 {
-"247
-[; ;main.c: 247:         initGame();
+"245
+[; ;main.c: 245:         initGame();
 [e ( _initGame ..  ]
-"248
-[; ;main.c: 248:         MAX7219_init(1);
+"246
+[; ;main.c: 246:         MAX7219_init(1);
 [e ( _MAX7219_init (1 -> -> 1 `i `uc ]
-"249
-[; ;main.c: 249:         while (!isScore) {
+"247
+[; ;main.c: 247:         while (!isScore) {
 [e $U 170  ]
 [e :U 171 ]
 {
-"251
-[; ;main.c: 251:             if (readButton0() == 1) {
+"249
+[; ;main.c: 249:             if (readButton0() == 1) {
 [e $ ! == ( _readButton0 ..  -> 1 `i 173  ]
 {
-"252
-[; ;main.c: 252:                 buttonGoUp(1);
+"250
+[; ;main.c: 250:                 buttonGoUp(1);
 [e ( _buttonGoUp (1 -> 1 `i ]
-"253
-[; ;main.c: 253:             }
+"251
+[; ;main.c: 251:             }
 }
 [e :U 173 ]
-"254
-[; ;main.c: 254:             if (readButton1() == 1) {
+"252
+[; ;main.c: 252:             if (readButton1() == 1) {
 [e $ ! == ( _readButton1 ..  -> 1 `i 174  ]
 {
-"255
-[; ;main.c: 255:                 buttonGoDown(1);
+"253
+[; ;main.c: 253:                 buttonGoDown(1);
 [e ( _buttonGoDown (1 -> 1 `i ]
-"256
-[; ;main.c: 256:             }
+"254
+[; ;main.c: 254:             }
 }
 [e :U 174 ]
-"257
-[; ;main.c: 257:             if (readButton2() == 1) {
+"255
+[; ;main.c: 255:             if (readButton2() == 1) {
 [e $ ! == ( _readButton2 ..  -> 1 `i 175  ]
 {
-"258
-[; ;main.c: 258:                 buttonGoUp(2);
+"256
+[; ;main.c: 256:                 buttonGoUp(2);
 [e ( _buttonGoUp (1 -> 2 `i ]
-"259
-[; ;main.c: 259:             }
+"257
+[; ;main.c: 257:             }
 }
 [e :U 175 ]
-"260
-[; ;main.c: 260:             if (readButton3() == 1) {
+"258
+[; ;main.c: 258:             if (readButton3() == 1) {
 [e $ ! == ( _readButton3 ..  -> 1 `i 176  ]
 {
-"261
-[; ;main.c: 261:                 buttonGoDown(2);
+"259
+[; ;main.c: 259:                 buttonGoDown(2);
 [e ( _buttonGoDown (1 -> 2 `i ]
-"262
-[; ;main.c: 262:             }
+"260
+[; ;main.c: 260:             }
 }
 [e :U 176 ]
-"263
-[; ;main.c: 263:             _delay((unsigned long)((5)*(800000000/4000.0)));
+"261
+[; ;main.c: 261:             _delay((unsigned long)((5)*(800000000/4000.0)));
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 800000000 `l `d .4000.0 `ul ]
-"264
-[; ;main.c: 264:             updateBallPosition();
+"262
+[; ;main.c: 262:             updateBallPosition();
 [e ( _updateBallPosition ..  ]
-"265
-[; ;main.c: 265:         }
+"263
+[; ;main.c: 263:         }
 }
 [e :U 170 ]
-"249
-[; ;main.c: 249:         while (!isScore) {
+"247
+[; ;main.c: 247:         while (!isScore) {
 [e $ ! != -> _isScore `i -> 0 `i 171  ]
 [e :U 172 ]
-"266
-[; ;main.c: 266:     }
+"264
+[; ;main.c: 264:     }
 }
 [e :U 167 ]
 [e $U 168  ]
 [e :U 169 ]
-"271
-[; ;main.c: 271:     return (0);
+"269
+[; ;main.c: 269:     return (0);
 [e ) -> 0 `i ]
 [e $UE 166  ]
-"272
-[; ;main.c: 272: }
+"270
+[; ;main.c: 270: }
 [e :UE 166 ]
 }

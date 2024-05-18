@@ -27,7 +27,7 @@
 [v _buttonGoDown buttonGoDown `(v  1 e 1 0 ]
 "198
 [v _updateBallPosition updateBallPosition `(v  1 e 1 0 ]
-"243
+"241
 [v _main main `(i  1 e 2 0 ]
 "12 C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
 [v _MAX7219_init MAX7219_init `(v  1 e 1 0 ]
@@ -83,17 +83,17 @@
 [v _ballYState ballYState `uc  1 e 1 0 ]
 "51
 [v _isScore isScore `a  1 e 1 0 ]
-"243
+"241
 [v _main main `(i  1 e 2 0 ]
 {
-"272
+"270
 } 0
 "198
 [v _updateBallPosition updateBallPosition `(v  1 e 1 0 ]
 {
 "199
 [v updateBallPosition@ballXprev ballXprev `i  1 a 2 0 ]
-"241
+"239
 } 0
 "78
 [v _readButton3 readButton3 `(i  1 e 2 0 ]
