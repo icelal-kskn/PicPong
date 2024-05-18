@@ -124,8 +124,8 @@ The software is written in C and compiled using MPLAB X IDE with the XC8 compile
 
 ## Project Contributiors
 
- - [İkram Celal KESKİN 200316059](https://github.com/icelal-kskn)
- - [Musa Sina ERTUĞRUL ?](https://github.com/?)
+ - [İkram Celal KESKİN](https://github.com/icelal-kskn)
+ - [Musa Sina ERTUĞRUL](https://github.com/Musa-Sina-Ertugrul)
  - 
 
 ## License
