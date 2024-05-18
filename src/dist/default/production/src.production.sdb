@@ -11,19 +11,23 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"60 C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+"53 C:\Users\Celal\Documents\GitHub\PicPong\src\main.c
+[v _initGame initGame `(v  1 e 1 0 ]
+"62
 [v _readButton0 readButton0 `(i  1 e 2 0 ]
-"63
-[v _readButton1 readButton1 `(i  1 e 2 0 ]
 "66
+[v _readButton1 readButton1 `(i  1 e 2 0 ]
+"70
 [v _readButton2 readButton2 `(i  1 e 2 0 ]
-"69
+"74
 [v _readButton3 readButton3 `(i  1 e 2 0 ]
-"73
+"78
 [v _buttonGoUp buttonGoUp `(v  1 e 1 0 ]
-"132
+"136
 [v _buttonGoDown buttonGoDown `(v  1 e 1 0 ]
-"191
+"194
+[v _updateBallPosition updateBallPosition `(v  1 e 1 0 ]
+"239
 [v _main main `(i  1 e 2 0 ]
 "12 C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
 [v _MAX7219_init MAX7219_init `(v  1 e 1 0 ]
@@ -69,46 +73,64 @@
 [v _p1State p1State `uc  1 e 1 0 ]
 "44
 [v _p2State p2State `uc  1 e 1 0 ]
+"46
+[v _ballDirX ballDirX `i  1 e 2 0 ]
+"47
+[v _ballDirY ballDirY `i  1 e 2 0 ]
 "48
 [v _ballX ballX `i  1 e 2 0 ]
 "49
 [v _ballYState ballYState `uc  1 e 1 0 ]
-"191
+"51
+[v _isScore isScore `a  1 e 1 0 ]
+"239
 [v _main main `(i  1 e 2 0 ]
 {
-"218
+"268
 } 0
-"69
+"194
+[v _updateBallPosition updateBallPosition `(v  1 e 1 0 ]
+{
+"195
+[v updateBallPosition@ballXprev ballXprev `i  1 a 2 0 ]
+"237
+} 0
+"74
 [v _readButton3 readButton3 `(i  1 e 2 0 ]
 {
-"71
+"76
+} 0
+"70
+[v _readButton2 readButton2 `(i  1 e 2 0 ]
+{
+"72
 } 0
 "66
-[v _readButton2 readButton2 `(i  1 e 2 0 ]
+[v _readButton1 readButton1 `(i  1 e 2 0 ]
 {
 "68
 } 0
-"63
-[v _readButton1 readButton1 `(i  1 e 2 0 ]
-{
-"65
-} 0
-"60
+"62
 [v _readButton0 readButton0 `(i  1 e 2 0 ]
 {
-"62
+"64
 } 0
-"73
+"53
+[v _initGame initGame `(v  1 e 1 0 ]
+{
+"60
+} 0
+"78
 [v _buttonGoUp buttonGoUp `(v  1 e 1 0 ]
 {
 [v buttonGoUp@player player `i  1 p 2 7 ]
-"130
+"134
 } 0
-"132
+"136
 [v _buttonGoDown buttonGoDown `(v  1 e 1 0 ]
 {
 [v buttonGoDown@player player `i  1 p 2 7 ]
-"189
+"192
 } 0
 "12 C:\Users\Celal\Documents\GitHub\PicPong\src\MAX7219.c
 [v _MAX7219_init MAX7219_init `(v  1 e 1 0 ]

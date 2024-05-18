@@ -48,110 +48,58 @@ int ballDirY = 1;
 int ballX = 4;
 char ballYState = Row4;
 
-int isScore=0;
+bool isScore = false;
 
 void initGame() {
     ballX = 4;
     ballYState = Row4;
-    MAX7219_write(8, p1State);
-    MAX7219_write(1, p2State);
+    
+    MAX7219_write(8, No_Light);
+    MAX7219_write(1, No_Light);
+    
+    MAX7219_write(7, p1State);
+    MAX7219_write(2, p2State);
     MAX7219_write(ballX, ballYState);
+    isScore = false;
 }
-
 
 int readButton0() {
     return Player1_up_pin;
 }
+
 int readButton1() {
     return Player1_down_pin;
 }
+
 int readButton2() {
     return Player2_up_pin;
 }
+
 int readButton3() {
     return Player2_down_pin;
 }
 
 void buttonGoUp(int player) {
-    if (player ==1){
-        switch (p1State){
+    if (player == 1) {
+        switch (p1State) {
             case STATE_1:
-                p1State=STATE_2;
-                MAX7219_write(7, p1State); 
+                p1State = STATE_2;
+                MAX7219_write(7, p1State);
                 break;
             case STATE_2:
-                p1State=STATE_3;
+                p1State = STATE_3;
                 MAX7219_write(7, p1State);
                 break;
             case STATE_3:
-                p1State=STATE_4;
-                MAX7219_write(7, p1State);                
-                break;
-            case STATE_4:
-                p1State=STATE_5;
-                MAX7219_write(7, p1State); 
-                break;
-            case STATE_5:
-                p1State=STATE_5;
+                p1State = STATE_4;
                 MAX7219_write(7, p1State);
                 break;
-            default:
-                p1State =STATE_3;
+            case STATE_4:
+                p1State = STATE_5;
                 MAX7219_write(7, p1State);
                 break;
-        }
-    }
-    else{
-        switch (p2State){
-            case STATE_1:
-                p2State=STATE_2;
-                MAX7219_write(2, p2State); 
-                break;
-            case STATE_2:
-                p2State=STATE_3;
-                MAX7219_write(2, p2State);
-                break;
-            case STATE_3:
-                p2State=STATE_4;
-                MAX7219_write(2, p2State);                
-                break;
-            case STATE_4:
-                p2State=STATE_5;
-                MAX7219_write(2, p2State); 
-                break;
             case STATE_5:
-                p2State=STATE_5;
-                MAX7219_write(2, p2State);
-                break;
-            default:
-                p2State = STATE_3;
-                MAX7219_write(2, p2State);
-                break;
-        }
-    }      
-}
-
-void buttonGoDown(int player) {
-    if (player ==1){
-        switch (p1State){
-            case STATE_1:
-                p1State=STATE_1;
-                MAX7219_write(7, p1State); 
-                break;
-            case STATE_2:
-                p1State=STATE_1;
-                MAX7219_write(7, p1State);
-                break;
-            case STATE_3:
-                p1State=STATE_2;
-                MAX7219_write(7, p1State);                
-                break;
-            case STATE_4:
-                p1State=STATE_3;
-                MAX7219_write(7, p1State); 
-                break;
-            case STATE_5:
-                p1State=STATE_4;
+                p1State = STATE_5;
                 MAX7219_write(7, p1State);
                 break;
             default:
@@ -159,27 +107,84 @@ void buttonGoDown(int player) {
                 MAX7219_write(7, p1State);
                 break;
         }
-    }
-    else{
-        switch (p2State){
+    } else {
+        switch (p2State) {
             case STATE_1:
-                p2State=STATE_1;
-                MAX7219_write(2, p2State); 
+                p2State = STATE_2;
+                MAX7219_write(2, p2State);
                 break;
             case STATE_2:
-                p2State=STATE_1;
+                p2State = STATE_3;
                 MAX7219_write(2, p2State);
                 break;
             case STATE_3:
-                p2State=STATE_2;
-                MAX7219_write(2, p2State);                
+                p2State = STATE_4;
+                MAX7219_write(2, p2State);
                 break;
             case STATE_4:
-                p2State=STATE_3;
-                MAX7219_write(2, p2State); 
+                p2State = STATE_5;
+                MAX7219_write(2, p2State);
                 break;
             case STATE_5:
-                p2State=STATE_4;
+                p2State = STATE_5;
+                MAX7219_write(2, p2State);
+                break;
+            default:
+                p2State = STATE_3;
+                MAX7219_write(2, p2State);
+                break;
+        }
+    }
+}
+
+void buttonGoDown(int player) {
+    if (player == 1) {
+        switch (p1State) {
+            case STATE_1:
+                p1State = STATE_1;
+                MAX7219_write(7, p1State);
+                break;
+            case STATE_2:
+                p1State = STATE_1;
+                MAX7219_write(7, p1State);
+                break;
+            case STATE_3:
+                p1State = STATE_2;
+                MAX7219_write(7, p1State);
+                break;
+            case STATE_4:
+                p1State = STATE_3;
+                MAX7219_write(7, p1State);
+                break;
+            case STATE_5:
+                p1State = STATE_4;
+                MAX7219_write(7, p1State);
+                break;
+            default:
+                p1State = STATE_3;
+                MAX7219_write(7, p1State);
+                break;
+        }
+    } else {
+        switch (p2State) {
+            case STATE_1:
+                p2State = STATE_1;
+                MAX7219_write(2, p2State);
+                break;
+            case STATE_2:
+                p2State = STATE_1;
+                MAX7219_write(2, p2State);
+                break;
+            case STATE_3:
+                p2State = STATE_2;
+                MAX7219_write(2, p2State);
+                break;
+            case STATE_4:
+                p2State = STATE_3;
+                MAX7219_write(2, p2State);
+                break;
+            case STATE_5:
+                p2State = STATE_4;
                 MAX7219_write(2, p2State);
                 break;
             default:
@@ -187,56 +192,81 @@ void buttonGoDown(int player) {
                 MAX7219_write(2, p2State);
                 break;
         }
-    } 
+    }
 }
+
 void updateBallPosition() {
-    int ballXprev= ballX;
-    //Topun column kordinatlar?
-    if (ballX ==  || ballX == 8) { // Sinirlar
-        ballDirX = -ballDirX;
+    int ballXprev = ballX;
+
+    if (ballX == 2) {//pade çarpt? m?  
+        if ((p2State & ballYState) == p2State) {
+            ballDirX = -ballDirX;
+            ballDirY = -ballDirY;
+        }
+    }
+    else if (ballX == 7) {//pade çarpt? m?  
+        if ((p1State & ballYState) == p1State) {
+            ballDirX = -ballDirX;
+            ballDirY = -ballDirY;
+        }
     }
     ballX += ballDirX;
-
-    if ((ballYState & p1State)!= No_Light || (ballYState & p2State) != No_Light) { //pad kontrol
-        ballDirY = -ballDirY;
-    }
-    ballYState = (ballDirY == 1) ? ballYState << 1 : ballYState >> 1;
     
-    MAX7219_write(ballXprev, No_Light);
-    MAX7219_write(ballX, ballYState);
-}
+    if ((ballYState & Row0) == Row0) { //yukar? a?a?? kontrol
+        ballYState = (ballDirY == 1) ? Row1 : Row0;
+        ballDirY = 1;
+    } else if ((ballYState & Row1) == Row1) { //yukar? a?a?? kontrol
+        ballYState = (ballDirY == 1) ? Row2 : Row0;
+    } else if ((ballYState & Row2) == Row2) { //yukar? a?a?? kontrol
+        ballYState = (ballDirY == 1) ? Row3 : Row1;
+    } else if ((ballYState & Row3) == Row3) { //yukar? a?a?? kontrol
+        ballYState = (ballDirY == 1) ? Row4 : Row2;
+    } else if ((ballYState & Row4) == Row4) { //yukar? a?a?? kontrol
+        ballYState = (ballDirY == 1) ? Row5 : Row3;
+    } else if ((ballYState & Row5) == Row5) { //yukar? a?a?? kontrol
+        ballYState = (ballDirY == 1) ? Row6 : Row4;
+    } else if ((ballYState & Row6) == Row6) { //yukar? a?a?? kontrol
+        ballYState = (ballDirY == 1) ? Row7 : Row5;
+    } else if ((ballYState & Row7) == Row7) { //yukar? a?a?? kontrol
+        ballYState = (ballDirY == 1) ? Row7 : Row6;
+        ballDirY = -1;
+    }
 
-void initGame() {
-    ballX = 4;
-    ballYState = Row4;
-    MAX7219_write(7, p1State);
-    MAX7219_write(2, p2State);
+    if (ballX == 1 || ballX == 8) { // puan s?n?rlar?
+        isScore = true;
+    }
+
+    MAX7219_write(ballXprev, No_Light); //Need if pads time pads might be invisible
     MAX7219_write(ballX, ballYState);
 }
 
 int main(int argc, char** argv) {
     TRISB = 0x0F; // init input
     TRISC = 0; //init output
-    //initGame();
-    MAX7219_init(1);
-    
-    while(1){
-        //update_ball_position
-        //__delay_ms(10);
-        if(readButton0() == 1){
-            buttonGoUp(1);
+    while (1) {
+        initGame();
+        MAX7219_init(1);
+        while (!isScore) {
+
+            if (readButton0() == 1) {
+                buttonGoUp(1);
+            }
+            if (readButton1() == 1) {
+                buttonGoDown(1);
+            }
+            if (readButton2() == 1) {
+                buttonGoUp(2);
+            }
+            if (readButton3() == 1) {
+                buttonGoDown(2);
+            }
+            __delay_ms(5);
+            updateBallPosition();
         }
-        if(readButton1() == 1){
-            buttonGoDown(1);
-        }
-        if(readButton2() == 1){
-            buttonGoUp(2);
-        }
-        if(readButton3() == 1){
-            buttonGoDown(2);
-        }
-        
     }
+
+
+
 
     return (EXIT_SUCCESS);
 }
